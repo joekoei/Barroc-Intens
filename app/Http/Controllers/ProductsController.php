@@ -33,7 +33,16 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Creates products object with the fillable options in the model class
+        Product::create([
+            "name"=>$request->name,
+            "description"=>$request->description,
+            "image_paths"=>$request->image_paths,
+            "price"=>$request->price,
+            "product_catogory_id"=>$request->product_cat
+        ]);
+
+        return redirect()->route('auth.products.index');
     }
 
     /**
