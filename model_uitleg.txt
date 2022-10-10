@@ -1,0 +1,21 @@
+Je kan met de volgende models snel en makkelijk alle data opvragen:
+- Company
+- Product
+- Note
+1. Company
+Via dit model kan je heel simpel de eigenaar zijn gegevens binnenhalen zonder extra models aan te roepen. Hieronder staat een voorbeeld wat je hier mee kan doen.
+$company = Company::findOrFail(1); // random company, normaler gezien voer je daar het id van de request.
+$owner = $company->owner->name; // Hier mee roep je de function owner() in het model aan, deze model koppelt door foreign keys automatisch terug naar een user in de database.
+
+
+2. Product
+Via dit model kan je terugkoppelen aan een categorie waar deze ondervalt. Hier onder het bijbehorende voorbeeld.
+$product = Product::findOrFail(1); // random product, normaler gezien het id
+$cat = $product->cat->name; // Hier mee roep je de function cat() in het model aan, zelfde principe als bij company
+
+3. Note
+Dit model heeft 2 foreign keys waar we mee kunnen communiceren. Een voorbeeld voor alle 2.
+$note = Note::findOrFail(1); // random note, normaler gezien het id
+$owner = $note->owner->name; // zelfde principe als bij het company model
+
+$company = $note->company->name; // De notes hebben ook een foreign met het bedrijf waar het bijhoort. Hiermee kan je dus alle bedrijf data vinden die bij de note horen.
