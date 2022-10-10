@@ -11,10 +11,10 @@ class Note extends Model
 
 
     public function owner(){
-        return $this->hasOne(User::class,'id');
+        return $this->hasOne(User::class);
     }
 
     public function company(){
-        return $this->hasOne(Company::class,'id');
+        return $this->hasOne(Company::class);
     }
 }
