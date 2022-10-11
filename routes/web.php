@@ -24,6 +24,7 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::prefix("dashboard")->group(function (){
     Route::get('/',[DashboardController::class,'index']);
+    Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
         Route::resource("products",ProductsController::class);
     });
