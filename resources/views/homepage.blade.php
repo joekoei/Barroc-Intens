@@ -2,7 +2,13 @@
 
 @section('content')
     <!-- Background image -->
+<<<<<<< Updated upstream
     <div class="bg-image row w-100 align-items-center">
+=======
+    <div class="bg-image">
+    <div
+        class="bg-image row align-items-center">
+>>>>>>> Stashed changes
         <div class="container text-center">
             <div class="align-middle">
                 <h1 class="db-title db-color-yellow">Barroc Intens</h1>
