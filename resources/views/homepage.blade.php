@@ -2,15 +2,15 @@
 
 @section('content')
     <!-- Background image -->
-    <div class="bg-image" style="background-image: url('{{asset('img/banner-BG.jpg')}}');height: 80vh; background-size: cover; background-position: center center">
-    <div
-        class="bg-image row align-items-center">
+    <div class="bg-image row w-100 align-items-center">
         <div class="container text-center">
-            <h1 class="db-title db-color-yellow">Barroc Intens</h1>
-            <p class="text-white fs-4">Het nummer 1 koffiemerk ter wereld</p>
-            <div class="container d-flex justify-content-evenly db-margin-button">
-                <button class="db-btn">Koffie</button>
-                <button class="db-btn2">Machines</button>
+            <div class="align-middle">
+                <h1 class="db-title db-color-yellow">Barroc Intens</h1>
+                <p class="text-white fs-4">Het nummer 1 koffiemerk ter wereld</p>
+                <div class="container d-flex justify-content-evenly db-margin-button">
+                    <button class="db-btn">Koffie</button>
+                    <button class="db-btn2">Machines</button>
+                </div>
             </div>
         </div>
     </div>
