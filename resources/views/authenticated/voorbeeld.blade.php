@@ -2,7 +2,7 @@
 @section('content')
     <h2 class="text-center">Maak een klant aan en sla deze op in ons systeem</h2>
     <div class="container">
-        <form action="{{route('clients.store')}}" method="post">
+        <form action="" method="post">
             @csrf
             <div class="row">
                 <div class="col-md-6">
