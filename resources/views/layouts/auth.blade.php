@@ -60,7 +60,7 @@
                     <li class="btn-group nav-item">
                         <a href="" class="nav-link">
                             <i class="nav-link-icon fa fa-edit"></i>
-                            Projects
+                            Je afdeling
                         </a>
                     </li>
                 </ul>
@@ -86,7 +86,7 @@
                                     Joey
                                 </div>
                                 <div class="widget-subheading">
-                                    Joey
+                                    AFDELING
                                 </div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
@@ -143,8 +143,8 @@
                                 <i class="pe-7s-car icon-gradient bg-mean-fruit">
                                 </i>
                             </div>
-                            <div>Welkom op het {{str_replace("_", " ", env("app_name"))}}
-                                <div class="page-title-subheading">Hier kan je alle informatie genereren die nodig is bij een klant en of het opslaan van klanten intern
+                            <div>{{str_replace("_", " ", env("app_name"))}}
+                                <div class="page-title-subheading">Dit is jouw interne platform voor Barroc Intens.
                                 </div>
                             </div>
                         </div>
