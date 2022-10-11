@@ -2,42 +2,52 @@
 
 @section('content')
 <div class="container">
-    <form>
+    <form action="{{route('contact.store')}}" method="post">
         @csrf
-        <div class="col-12">
-            <label class="form-label" for="emailInput">Email:</label>
-            <input class="form-control" type="text" value="" id="emailInput">
-            <div id="emailHelpBlock" class="form-text">
-                Voer hier je email in.
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label" for="emailInput">Email:</label>
+                <input class="form-control" type="text" value="" name="email" id="emailInput">
+                <div id="emailHelpBlock" class="form-text">
+                    Voer hier je email in.
+                </div>
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label class="form-label" for="aanhefInput">Aanhef:</label>
+                <select class="form-control" id="aanhefInput" name="aanhef">
+                    <option value="">Kies een aanhef</option>
+                    <option value="Dhr.">Dhr.</option>
+                    <option value="Mevr.">Mevr.</option>
+                </select>
             </div>
         </div>
         <br>
-        <div class="col-12">
-            <label class="form-label" for="aanhefInput">Aanhef:</label>
-            <select class="form-control" id="aanhefInput">
-                <option value="">Kies een aanhef</option>
-                <option value="a">Dhr.</option>
-                <option value="b">Mevr.</option>
-            </select>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="firstNameInput">Voornaam:</label>
+                <input class="form-control" type="text" id="firstNameInput" name="firstname">
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="lastNameInput">Achternaam:</label>
+                <input class="form-control" type="text" name="lastname" id="lastNameInput">
+            </div>
         </div>
         <br>
-        <div class="col-12">
-            <label for="firstNameInput">Voornaam:</label>
-            <input class="form-control" type="text" id="firstNameInput">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="lastNameInput">Onderwerp:</label>
+                <input class="form-control" type="text" name="subject" id="lastNameInput">
+            </div>
         </div>
-        <br>
-        <div class="col-12">
-            <label for="lastNameInput">Achternaam:</label>
-            <input class="form-control" type="text" name="lastNameInput" id="lastNameInput">
-        </div>
-        <br>
         <div class="col-12">
             <label for="textBoxInput">Reden voor contact:</label>
             <br>
-            <textarea class="form-control" name="textBoxInput" id="" cols="30" rows="10"></textarea>
+            <textarea class="form-control" name="reasoncontact" id="" cols="30" rows="10"></textarea>
         </div>
         <div>
-            <button type="submit" class="btn btn-primary">Verzend</button>
+            <input type="submit" class="btn btn-primary" value="Verzend">
         </div>
     </form>
 </div>

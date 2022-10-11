@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactForm;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -11,8 +12,12 @@ class ContactController extends Controller
     }
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $data = $request->except(['_token','subject']);
 
-        ]);
+        $cf = new ContactForm();
+        $cf->subject = $request->subject;
+        $cf->content = json_encode($data);
+        $cf->save();
+        return back();
     }
 }
