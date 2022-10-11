@@ -13,7 +13,6 @@
             </div>
         </div>
     </div>
-    <!-- Background image -->
 
     <!--  Wie zijn wij  -->
     <div class="container mt-4">
