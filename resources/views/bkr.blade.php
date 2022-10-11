@@ -1,33 +1,46 @@
-@extends('layouts.base')
-
+@extends('layouts.auth')
 @section('content')
+    <h2 class="text-center">Lease contract</h2>
     <div class="container">
-        <div id="example-div" class="bg-info border border-secondary d-flex aligns-items-center justify-content-center">
-            <form class="row g-3">
-                <div class="col-12">
-                    <label for="name" class="form-label">Name customer:</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Jan Janssen">
+        <form action="" method="post">
+            @csrf
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="first">Name customer:</label>
+                        <input type="text" class="form-control" placeholder="Jan Janssen" id="name" name="name">
+                    </div>
                 </div>
-                <div class="col-12">
-                    <label for="contracts-time" class="form-label">Time:</label>
-                    <select id="contracts-time" class="form-select">
-                        <option selected>Choose...</option>
-                        <option value="maandelijks">Maandelijks</option>
-                        <option value="jaarlijks">Jaarlijks</option>
-                    </select>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="contracts-time" class="form-label">Time:</label>
+                        <select id="contracts-time" class="form-select">
+                            <option selected>Choose...</option>
+                            <option value="maandelijks">Maandelijks</option>
+                            <option value="jaarlijks">Jaarlijks</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="bkrCheck">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="checkbox">
                         <label class="form-check-label" for="bkrCheck">
                             Bkr check completed
                         </label>
                     </div>
                 </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="checkbox" id="flexSwitchCheckDefault">
+                        <label for="bkrCheck">
+                            Is de bkr check positief?
+                        </label>
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
+            <button type="submit" class="btn-wide btn btn-success">Maak dit lease contract aan</button>
+        </form>
     </div>
 @endsection
