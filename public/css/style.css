@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Big Shoulders Display Black';
+    font-style: normal;
+    font-weight: 900;
+    src: url('public/fonts/BigShouldersDisplay-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('public/fonts/BigShouldersDisplay-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display ExtraBold';
+    font-style: normal;
+    font-weight: 800;
+    src: url('public/fonts/BigShouldersDisplay-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url('public/fonts/BigShouldersDisplay-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('public/fonts/BigShouldersDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('public/fonts/BigShouldersDisplay-SemiBold.ttf');
+}
+
+
