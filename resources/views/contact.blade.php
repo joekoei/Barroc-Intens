@@ -36,6 +36,9 @@
             <br>
             <textarea class="form-control" name="textBoxInput" id="" cols="30" rows="10"></textarea>
         </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Verzend</button>
+        </div>
     </form>
 </div>
 @endsection

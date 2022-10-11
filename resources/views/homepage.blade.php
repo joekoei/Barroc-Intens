@@ -6,7 +6,7 @@
             <div class="align-middle">
                 <h1 class="db-title db-color-yellow">Barroc Intens</h1>
                 <p class="text-white fs-4">Het nummer 1 koffiemerk ter wereld</p>
-                <div class="container d-flex justify-content-evenly db-margin-button">
+                <div class="w-50 p-3 mx-auto d-flex justify-content-evenly db-margin-button">
                     <button class="db-btn">Koffie</button>
                     <button class="db-btn2">Machines</button>
                 </div>
@@ -15,7 +15,7 @@
     </div>
 
     <!--  Wie zijn wij  -->
-    <div class="container mt-4">
+    <div class="container padding-bot-top">
         <div class="row">
             <div class="col-sm">
                 <img src="{{asset('img/logo1_groot.png')}}" alt="wiezijnwij">
