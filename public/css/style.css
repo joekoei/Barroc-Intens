@@ -41,8 +41,8 @@
 }
 
 .bg-image{
-    background: linear-gradient(0deg, rgba(0 0 0 / 70%), rgba(0 0 0 / 70%)), url('../img/banner-BG-curved.png');
-    height: 80vh; background-size: cover; background-position: bottom center;
+    background: url('../img/banner-BG-curved.png');
+    height: 100vh; background-size: cover; background-position: bottom center;
     margin-right: 0!important;
     margin-left: 0!important;
 }
