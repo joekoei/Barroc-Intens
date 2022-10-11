@@ -42,7 +42,9 @@
 
 .bg-image{
     background: linear-gradient(0deg, rgba(0 0 0 / 70%), rgba(0 0 0 / 70%)), url('../img/banner-BG.jpg');
-    height: 80vh; background-size: cover; background-position: center center;">
+    height: 80vh; background-size: cover; background-position: center center;
+    margin-right: 0!important;
+    margin-left: 0!important;
 }
 
 .db-color-yellow{
