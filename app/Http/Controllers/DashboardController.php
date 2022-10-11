@@ -22,4 +22,8 @@ class DashboardController extends Controller
 //                break;
 //        }
     }
+
+    public function voorbeeld(){
+        return view('authenticated.voorbeeld');
+    }
 }
