@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ Route::get('/', [PagesController::class,'index'])->name('homepage');
 Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
 
 Route::prefix("dashboard")->group(function (){
+    Route::get('/',[DashboardController::class,'index']);
     Route::prefix("sales")->group(function () {
         Route::resource("products",ProductsController::class);
     });
