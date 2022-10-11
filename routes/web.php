@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [PagesController::class,'index'])->name('homepage');
 
 Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
 
