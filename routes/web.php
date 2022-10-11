@@ -20,6 +20,8 @@ Route::get('/', [PagesController::class,'index'])->name('homepage');
 
 Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
 
+Route::get("/contact", [PagesController::class,'contact'])->name('contact');
+
 Route::prefix("dashboard")->group(function (){
     Route::get('/',[DashboardController::class,'index']);
     Route::prefix("sales")->group(function () {

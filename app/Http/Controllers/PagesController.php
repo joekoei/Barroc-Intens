@@ -13,4 +13,8 @@ class PagesController extends Controller
     public function bkr(){
         return view('bkr');
     }
+
+    public function contact(){
+        return view('contact');
+    }
 }
