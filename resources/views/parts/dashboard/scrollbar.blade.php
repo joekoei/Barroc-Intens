@@ -4,16 +4,16 @@
             @if(Auth::user()->role()->name == "sales")
                 <li class="app-sidebar__heading">Sales</li>
                 <li>
-                    <a href="" id="home.side">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
+                    <a href="" id="home.side" style="font-size: 20px; margin-left: 0!important; padding-left: 10px!important;">
+                        <i class='bx bx-comment-detail'></i>
                         Contracten
                     </a>
-                    <a href="" id="home.side">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
+                    <a href="" id="home.side" style="font-size: 20px; margin-left: 0!important; padding-left: 10px!important;">
+                        <i class='bx bxs-contact'></i>
                         Contact formulieren
                     </a>
-                    <a href=""  id="klanten.side">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                    <a href="" id="home.side" style="font-size: 20px; margin-left: 0!important; padding-left: 10px!important;">
+                        <i class='bx bxl-product-hunt' ></i>
                         Producten (zien)
                     </a>
                 </li>

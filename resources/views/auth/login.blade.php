@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="relative" x-data="{ show: true }">
-                                <input placeholder="Password" :type="show ? 'password' : 'text'" class="text-sm text-gray-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-purple-400" name="password">
+                                <input placeholder="Password" :type="show ? 'password' : 'text'" class="text-sm text-black px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-purple-400" name="password">
                                 <div class="flex items-center absolute inset-y-0 right-0 mr-3  text-sm leading-5">
 
                                     <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"

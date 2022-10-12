@@ -8,7 +8,7 @@
                     <p class="text-white fs-4">Het nummer 1 koffiemerk ter wereld</p>
                     <div class="w-50 p-3 mx-auto d-flex justify-content-evenly db-margin-button">
                 </div>
-            </div>
+            </div>1
         </div>
     </div>
 <div class="container w-50">
