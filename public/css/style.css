@@ -129,6 +129,10 @@ nav .row {
 }
 
 .db-margin{
-    margin-top: 200px;
-    margin-bottom:200px;
+    margin: 100px;
+}
+
+.db-quote{
+    width: 100%;
+    background-color: #FDD716 ;
 }

@@ -61,6 +61,7 @@
                 <div class="col-sm-4">
                     <img class="db-imgwidth" src="{{asset('img/logo1_groot.png')}}" alt="wiezijnwij">
                 </div>
+            </div>
     </div>
     <!--  Wie zijn wij  -->
 
@@ -80,9 +81,11 @@
 
     <!-- Quote + Button -->
     <div class="sectie4">
-        <div class="container text-center">
-            <h1 class="text-center pt-4">Beste koffieautomaten met een prima italiaanse smaakske</h1>
-            <a class="pl-4 pr-4 btn btn-outline-dark text-black rounded-lg " href="#">Bekijk onze machines</a>
+        <div class="db-quote text-center">
+            <div class="container">
+                <h1 class="text-center pt-4">"A bad day with coffee is better than a good day without it."</h1>
+                <a class="pl-4 pr-4 btn btn-outline-dark text-black rounded-lg " href="#">Bekijk onze machines</a>
+            </div>
         </div>
     </div>
     <!-- Quote + Button -->
