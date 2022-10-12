@@ -28,5 +28,46 @@
     </div>
     <!--  Wie zijn wij  -->
 
+    <!--  Werkwijze  -->
+    <div class="container padding-bot-top">
+        <div class="row">
+            <div class="col-sm">
+                <h2>Werkwijze</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti earum fuga fugit impedit laboriosam libero magnam maiores, odit perspiciatis possimus quisquam reiciendis tempora voluptatum. Accusantium eius nam perspiciatis placeat quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores doloribus dolorum eos error, est excepturi inventore molestias nesciunt perferendis, praesentium recusandae ut voluptates. Ad explicabo fuga in laborum numquam!</p>
+            </div>
+            <div class="col-sm">
+                <img src="{{asset('img/logo3_groot.png')}}" alt="wiezijnwij">
+            </div>
+        </div>
+    </div>
+    <!--  Werkwijze  -->
+
+    <!-- Quote + Button -->
+    <div class="sectie4">
+        <div class="container text-center">
+            <h1 class="text-center pt-4">Beste koffieautomaten met een prima italiaanse smaakske</h1>
+            <a class="pl-4 pr-4 btn btn-outline-dark text-black rounded-lg " href="#">Bekijk onze machines</a>
+        </div>
+    </div>
+    <!-- Quote + Button -->
+
+    <!-- Categorie -->
+    <div class="sectie-categorie">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-sm text-center">
+                    <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
+                </div>
+                <div class="col-sm text-center">
+                    <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
+                </div>
+                <div class="col-sm text-center">
+                    <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Categorie -->
+
 
 @endsection

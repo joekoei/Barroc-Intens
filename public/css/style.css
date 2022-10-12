@@ -92,3 +92,30 @@
     padding-bottom: 100px;
 }
 
+.sectie4 .container {
+    max-width: 100%;
+    background-color: #FDD716;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+.sectie4 .container a {
+    margin-top: 25px;
+    padding: 5px 80px 5px 80px !important;
+    font-size: 25px;
+    font-family: "Big Shoulders Display Black";
+}
+
+.sectie4 .container a:hover {
+    color: white !important;
+}
+
+.sectie4 .container h1 {
+    font-family: "Big Shoulders Display ExtraBold";
+}
+
+.sectie-categorie .container .row {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
