@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-image w-100 align-items-center">
         <nav>
-            <div class="row p-3">
+            <div class="row pt-3 w-100">
                 <div class="col-sm px-2 py-2">
                     <img src="{{asset('img/logo5_klein.png')}}" alt="Logo">
                 </div>
@@ -13,7 +13,7 @@
                     <a class="nav-item nav-link text-white" href="">Home</a>
                     <a class="nav-item nav-link text-white" href="">Home</a>
                 </div>
-                <div class="col-sm d-flex justify-content-end">
+                <div class="col-sm d-flex justify-content-end p-0">
                     @if (Route::has('login'))
                         <div class="hidden fixed px-2 py-2 sm:block">
                             @auth
