@@ -45,8 +45,8 @@ nav .row {
 }
 
 .bg-image{
-    background-image: url("../img/bg-image-baroc.png");
-    height: 100vh; background-size: cover; background-position: bottom center;
+    background-image: url("../img/banner-BG.png");
+    height: 120vh; background-size: cover; background-position: bottom center;
     margin-right: 0!important;
     margin-left: 0!important;
 }
@@ -113,6 +113,7 @@ nav .row {
 
 .sectie4 .container a:hover {
     color: white !important;
+    transition: 0.6s;
 }
 
 .sectie4 .container h1 {
@@ -122,6 +123,14 @@ nav .row {
 .sectie-categorie .container .row {
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.db-background-gray{
+    background-color: #212121;
+}
+
+.db-contactText{
+    font-size: 55px;
 }
 
 .db-imgwidth{
@@ -135,4 +144,42 @@ nav .row {
 .db-quote{
     width: 100%;
     background-color: #FDD716 ;
+}
+
+.db-subtitle{
+    font-size: 50px;
+}
+
+.form-control{
+    border-radius: 0 !important;
+}
+
+.db-horeca{
+    background-image: url("../img/db-horeca.png");
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    width: 100%;
+    margin: 10px;
+    padding: 175px;
+}
+
+.db-office{
+    background-image: url("../img/db-office.png");
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    width: 100%;
+    margin: 10px;
+    padding: 175px;
+}
+
+.db-home{
+    background-image: url("../img/db-home.png");
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    width: 100%;
+    margin: 10px;
+    padding: 175px;
 }

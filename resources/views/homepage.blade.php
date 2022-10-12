@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bg-image w-100 align-items-center">
-        <nav>
+        <nav class="container">
             <div class="row pt-3 w-100">
                 <div class="col-sm px-2 py-2">
                     <img src="{{asset('img/logo5_klein.png')}}" alt="Logo">
@@ -44,18 +44,18 @@
 
     <!--  Wie zijn wij  -->
     <div class="container padding-bot-top">
-        <div class="row db-margin">
+        <div class="row db-margin gx-5">
             <div class="col-sm-4">
                 <img class="db-imgwidth" src="{{asset('img/logo1_groot.png')}}" alt="wiezijnwij">
             </div>
             <div class="col-sm-8">
-                <h2>Wie zijn  wij?</h2>
+                <h2 class="db-subtitle">Wie zijn  wij?</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at, aut autem commodi, dolorum enim ex, laboriosam laborum minima modi molestias nobis repellendus repudiandae sequi similique sit temporibus veritatis. Voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, itaque minima! Ab illo libero molestias mollitia natus quis totam voluptatem? Commodi et eum ex excepturi labore officia porro reprehenderit tenetur.</p>
             </div>
         </div>
-            <div class="row db-margin">
+            <div class="row db-margin gx-5">
                 <div class="col-sm-8">
-                    <h2>Wie zijn  wij?</h2>
+                    <h2 class="db-subtitle">Wie zijn  wij?</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at, aut autem commodi, dolorum enim ex, laboriosam laborum minima modi molestias nobis repellendus repudiandae sequi similique sit temporibus veritatis. Voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, itaque minima! Ab illo libero molestias mollitia natus quis totam voluptatem? Commodi et eum ex excepturi labore officia porro reprehenderit tenetur.</p>
                 </div>
                 <div class="col-sm-4">
@@ -65,43 +65,72 @@
     </div>
     <!--  Wie zijn wij  -->
 
-    <!--  Werkwijze  -->
-    <div class="container padding-bot-top">
-        <div class="row">
-            <div class="col-sm">
-                <h2>Werkwijze</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti earum fuga fugit impedit laboriosam libero magnam maiores, odit perspiciatis possimus quisquam reiciendis tempora voluptatum. Accusantium eius nam perspiciatis placeat quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores doloribus dolorum eos error, est excepturi inventore molestias nesciunt perferendis, praesentium recusandae ut voluptates. Ad explicabo fuga in laborum numquam!</p>
-            </div>
-            <div class="col-sm">
-                <img src="{{asset('img/logo3_groot.png')}}" alt="wiezijnwij">
-            </div>
-        </div>
-    </div>
-    <!--  Werkwijze  -->
-
     <!-- Quote + Button -->
     <div class="sectie4">
         <div class="db-quote text-center">
             <div class="container">
                 <h1 class="text-center pt-4">"A bad day with coffee is better than a good day without it."</h1>
-                <a class="pl-4 pr-4 btn btn-outline-dark text-black rounded-lg " href="#">Bekijk onze machines</a>
+                <a class="pl-4 pr-4 btn btn-outline-dark text-black rounded-lg" href="#">Bekijk onze machines</a>
             </div>
         </div>
     </div>
     <!-- Quote + Button -->
 
+    <!--  Werkwijze  -->
+    <div class="container padding-bot-top">
+        <div class="row gx-5">
+            <div class="col-sm-7">
+                <h2 class="db-contactText">Werk wijze</h2>natus quis totam voluptatem? Commodi et eum ex excepturi labore officia porro reprehenderit tenetur.</p>
+            </div>
+            <div class="col-sm-5">
+                <img class="db-imgwidth" src="{{asset('img/logo1_groot.png')}}" alt="wiezijnwij">
+            </div>
+        </div>
+    </div>
+    <!--  Werkwijze  -->
+
+    {{--    Contact--}}
+    <div class="db-background-gray">
+        <div class="container padding-bot-top">
+            <div class="row gx-5 align-items-center">
+                <div class="col-sm-7 text-white">
+                    <h2 class="db-subtitle">Heb je een vraag? Neem contact met ons op!</h2>
+                </div>
+                <div class="col-sm-5 p-5 bg-white">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Naam</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+
+                            <label class="mt-3 mb-2">Vraag</label>
+                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                        </div>
+                        <button type="submit" class="db-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{--contact--}}
+
     <!-- Categorie -->
     <div class="sectie-categorie">
         <div class="container">
-            <div class="row d-flex">
-                <div class="col-sm text-center">
-                    <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
+            <div class="row d-flex text-white gx-5">
+                <div class="col-sm text-center db-horeca">
+                    <h3>Horeca</h3>
                 </div>
-                <div class="col-sm text-center">
-                    <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
+                <div class="col-sm text-center db-office">
+                    <h3>Kantoor</h3>
                 </div>
-                <div class="col-sm text-center">
-                    <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
+                <div class="col-sm text-center db-home">
+                    <h3>Thuis</h3>
                 </div>
             </div
         </div>
@@ -110,3 +139,4 @@
 
 
 @endsection
+
