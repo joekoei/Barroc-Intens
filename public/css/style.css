@@ -40,6 +40,10 @@
     src: url('../fonts/BigShouldersDisplay-SemiBold.ttf');
 }
 
+nav .row {
+    background-color: transparent !important;
+}
+
 .bg-image{
     background-image: url("../img/bg-image-baroc.png");
     height: 100vh; background-size: cover; background-position: bottom center;
@@ -54,6 +58,7 @@
 .db-title{
     font-size: 120px;
     font-family: 'Big Shoulders Display Black';
+    margin-top: 125px !important;
 }
 
 .db-margin-button{
