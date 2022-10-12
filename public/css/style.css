@@ -124,3 +124,11 @@ nav .row {
     padding-bottom: 100px;
 }
 
+.db-imgwidth{
+    width: 100%;
+}
+
+.db-margin{
+    margin-top: 200px;
+    margin-bottom:200px;
+}
