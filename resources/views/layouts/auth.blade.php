@@ -61,7 +61,7 @@
                     <li class="btn-group nav-item">
                         <a href="" class="nav-link">
                             <i class="nav-link-icon fa fa-edit"></i>
-                            Je afdeling
+                            {{Auth::user()->role()->name}}
                         </a>
                     </li>
                 </ul>
@@ -84,10 +84,10 @@
                             </div>
                             <div class="widget-content-left  ml-3 header-user-info">
                                 <div class="widget-heading">
-                                    Joey
+                                    {{Auth::user()->name}}
                                 </div>
                                 <div class="widget-subheading">
-                                    AFDELING
+                                    {{Auth::user()->role()->name}}
                                 </div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
