@@ -9,16 +9,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{{str_replace("_", " ", env("app_name"))}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="description" content="Dashboard Barroc Intens">
     <meta name="msapplication-tap-highlight" content="no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
     <div class="app-header header-shadow">
         <div class="app-header__logo">
             <div class="logo">
-                {{str_replace(env('app_name'),'_'," ")}}
+                <h1 class="text-3xl db-let text-[#FDD716]">{{str_replace("_", " ", env("app_name"))}}</h1>
             </div>
             <div class="header__pane ml-auto">
                 <div>
