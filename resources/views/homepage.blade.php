@@ -45,10 +45,10 @@
     <!--  Wie zijn wij  -->
     <div class="container padding-bot-top">
         <div class="row">
-            <div class="col-sm">
+            <div class="col">
                 <img src="{{asset('img/logo1_groot.png')}}" alt="wiezijnwij">
             </div>
-            <div class="col-sm">
+            <div class="col">
                 <h2>Wie zijn  wij?</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at, aut autem commodi, dolorum enim ex, laboriosam laborum minima modi molestias nobis repellendus repudiandae sequi similique sit temporibus veritatis. Voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, itaque minima! Ab illo libero molestias mollitia natus quis totam voluptatem? Commodi et eum ex excepturi labore officia porro reprehenderit tenetur.</p>
             </div>
@@ -92,7 +92,7 @@
                 <div class="col-sm text-center">
                     <img src="{{asset('img/logo5_groot.png')}}" alt="logo">
                 </div>
-            </div>
+            </div
         </div>
     </div>
     <!-- Categorie -->
