@@ -66,6 +66,9 @@
     background-color: #212121;
     color: white;
 }
+.db-let {
+    font-family: 'Big Shoulders Display';
+}
 
 .db-btn:hover{
     background-color: #FDD716;
