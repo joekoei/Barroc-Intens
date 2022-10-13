@@ -5,8 +5,8 @@
                 <img src="{{asset('img/logo5_klein.png')}}" alt="Logo">
             </div>
             <div class="col-lg d-flex justify-content-between px-2 py-2 ">
-                <a class="nav-item nav-link text-white" href="">Home</a>
-                <a class="nav-item nav-link text-white" href="">Home</a>
+                <a class="nav-item nav-link text-white" href="{{route('homepage')}}">Home</a>
+                <a class="nav-item nav-link text-white" href="{{route('products')}}">Products</a>
                 <a class="nav-item nav-link text-white" href="">Home</a>
                 <a class="nav-item nav-link text-white" href="">Home</a>
             </div>

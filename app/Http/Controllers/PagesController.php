@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,7 +12,8 @@ class PagesController extends Controller
     }
 
     public function products(){
-        return view('products');
+        $products = Product::all();
+        return view('products')->with('products', $products);
     }
 
     public function bkr(){
