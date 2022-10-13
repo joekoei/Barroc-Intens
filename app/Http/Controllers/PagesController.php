@@ -10,6 +10,10 @@ class PagesController extends Controller
         return view('homepage');
     }
 
+    public function products(){
+        return view('products');
+    }
+
     public function bkr(){
         return view('bkr');
     }
