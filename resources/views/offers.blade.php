@@ -32,7 +32,8 @@
         <div class="row">
             <div class="col-md-6 padding-bot">
                 <label for="lastNameInput">Onderwerp:</label>
-                <input class="form-control" type="text" name="subject" id="lastNameInput" disabled>
+                <input type="hidden" name="subject" value="{{$productname}}">
+                <input value="{{$productname}}" class="form-control" type="text" name="subject" id="lastNameInput" disabled>
             </div>
         </div>
         <div class="col-12 padding-bot">
