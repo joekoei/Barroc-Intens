@@ -24,6 +24,9 @@
                                 <td class="text-muted text-center">{{$product->cat()->name}}</td>
                                 <td class="text-muted text-center">{{$product->updated_at}}</td>
                                 <td class="text-center">
+                                    <a href="" class="btn btn-success text-white">Edit</a>
+                                </td>
+                                <td class="text-center">
                                     <a href="" class="btn btn-warning text-white">Remove</a>
                                 </td>
                             </tr>
