@@ -24,7 +24,8 @@ class PagesController extends Controller
         return view('contact');
     }
 
-    public function offers(){
-        return view('offers');
+    public function offers($id){
+        $productname = Product::findOrFail($id)->name;
+        return view('offers')->with(compact('productname'));
     }
 }
