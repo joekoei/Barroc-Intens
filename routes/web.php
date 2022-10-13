@@ -35,6 +35,9 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
         Route::resource("products",ProductsController::class);
+    });
+
+    Route::prefix('finance')->group(function () {
         Route::resource("invoices", InvoicesController::class);
     });
 
