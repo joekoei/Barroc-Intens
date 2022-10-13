@@ -3,6 +3,7 @@
     <h2 class="text-center">Lease contract</h2>
     <div class="container">
         <form action="" method="post">
+            <input type="hidden" name="subject" value="bkr-check">
             @csrf
             <div class="row">
                 <div class="col-md-12">

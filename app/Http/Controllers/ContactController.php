@@ -14,10 +14,20 @@ class ContactController extends Controller
     {
         $data = $request->except(['_token','subject']);
 
-        $cf = new ContactForm();
-        $cf->subject = $request->subject;
-        $cf->content = json_encode($data);
-        $cf->save();
+        new ContactForm([
+            'subject'=>$request->subject,
+            'content'=>json_encode($data)
+        ]);
+        return back();
+    }
+
+    public function storeBKR(Request $request){
+        $data = $request->except(['_token','subject']);
+
+        new ContactForm([
+            'subject'=>$request->subject,
+            'content'=>json_encode($data)
+        ]);
         return back();
     }
 }

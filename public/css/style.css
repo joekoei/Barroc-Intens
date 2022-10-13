@@ -80,6 +80,13 @@ nav .row {
     transition: 0.6s;
 }
 
+.db-auth{
+    padding: 10px 25px 10px 25px;
+    border: none;
+    background-color: #FDD716;
+    color: white;
+}
+
 .db-btn2{
     padding: 20px 70px 20px 70px;
     border: none;

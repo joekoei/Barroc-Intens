@@ -32,7 +32,7 @@
                     </table>
                 </div>
                 <div class="d-block text-center card-footer">
-                    <a href="{{route('products.create')}}" class="db-btn2 btn">Product aanmaken</a>
+                    <a href="{{route('products.create')}}" class="db-auth btn">Product aanmaken</a>
                 </div>
             </div>
         </div>
