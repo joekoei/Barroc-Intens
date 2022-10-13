@@ -22,7 +22,8 @@ class CompanySeeder extends Seeder
             "house_number"=>"14",
             "city"=>"zevenbergen",
             "country_code"=>"NL",
-            "bkr_checked"=>"13-10-2022"
+            "bkr_checked"=>date_create('now')->format('Y-m-d H:i:s'),
+            "contact_id"=>"5"
         ]);
     }
 }
