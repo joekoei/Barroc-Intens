@@ -16,9 +16,17 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed px-2 py-2 sm:block">
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500">Dashboard</a>
+                                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 db-link"><i class='bx bxs-user'></i>Dashboard</a>
                             @else
+<<<<<<< Updated upstream
                                 <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500">Log in</a>
+=======
+                                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 db-link">Log in</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500">Register</a>
+                                @endif
+>>>>>>> Stashed changes
                             @endauth
                         </div>
                     @endif
