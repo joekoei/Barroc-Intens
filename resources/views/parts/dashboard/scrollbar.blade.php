@@ -34,7 +34,7 @@
             @if(Auth::user()->role()->name == "inkoop")
                 <li class="app-sidebar__heading">Inkoop</li>
                 <li>
-                    <a href=""  id="klanten.side">
+                    <a href="{{route('products.index')}}"  id="klanten.side">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Producten
                     </a>

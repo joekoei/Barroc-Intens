@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,5 +37,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("products",ProductsController::class);
         Route::resource("invoices", InvoicesController::class);
     });
+
+    Route::get('/logout',[ExtendedAuthController::class,'logout'])->name('logout');
 });
 require __DIR__.'/auth.php';
