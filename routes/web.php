@@ -38,6 +38,6 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("invoices", InvoicesController::class);
     });
 
-    Route::get('/logout',[ExtendedAuthController::class,'logout'])->name('logout');
+    Route::get('/logout',[ExtendedAuthController::class,'logout'])->name('uitlog');
 });
 require __DIR__.'/auth.php';

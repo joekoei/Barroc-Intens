@@ -80,7 +80,7 @@
                                     <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                         <button type="button" tabindex="0" class="dropdown-item">Bewerk je gegevens</button>
                                         <div tabindex="-1" class="dropdown-divider"></div>
-                                        <a href="{{route('logout')}}" tabindex="0" class="dropdown-item">Uitloggen</a>
+                                        <a href="{{route('uitlog')}}" tabindex="0" class="dropdown-item">Uitloggen</a>
                                     </div>
                                 </div>
                             </div>
