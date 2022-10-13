@@ -31,9 +31,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-block text-center card-footer">
-                    <a href="{{route('products.create')}}" class="db-auth btn">Product aanmaken</a>
-                </div>
+                @if(Auth::user()->role()->name == "inkoop")
+                    <div class="d-block text-center card-footer">
+                        <a href="{{route('products.create')}}" class="db-auth btn">Product aanmaken</a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>@endsection
