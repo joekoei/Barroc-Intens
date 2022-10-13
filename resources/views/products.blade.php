@@ -13,7 +13,7 @@
                 @foreach( $products as $product)
                     <h2> {{ $product->name }}</h2>
                     <p> {{$product-> description}}</p>
-                    <p> {{$product->image_paths}}</p>
+                    <img src="{{$product->image_paths}}" width="200px">
                     <p> {{$product-> price}}</p>
                 @endforeach
             </div>
