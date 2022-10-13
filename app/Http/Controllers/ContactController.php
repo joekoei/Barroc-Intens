@@ -19,7 +19,7 @@ class ContactController extends Controller
             'subject'=>$request->subject,
             'content'=>json_encode($data)
         ]);
-        return back();
+        return redirect()->route('products');
     }
 
     public function storeBKR(Request $request){
@@ -29,6 +29,6 @@ class ContactController extends Controller
             'subject'=>$request->subject,
             'content'=>json_encode($data)
         ]);
-        return back();
+        return redirect()->route('dashboard');
     }
 }
