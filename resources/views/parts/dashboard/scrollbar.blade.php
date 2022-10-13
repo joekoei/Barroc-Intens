@@ -28,7 +28,7 @@
             @if(Auth::user()->role()->name == "maintenance")
                 <li class="app-sidebar__heading db-color-yellow" >Maintenance</li>
                 <li>
-                    <a href="" id="agenda.side" class="db-force">
+                    <a href="{{route('meetings.index')}}" id="agenda.side" class="db-force">
                         <i class='bx bxs-calendar' ></i>
                         Agenda
                     </a>
