@@ -16,7 +16,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($appointment as $appointment)
+                        @foreach($meetings as $appointment)
                             <tr>
                                 <td class="text-muted text-center">{{$appointment->company_id}}</td>
                                 <td class="text-muted text-center">{{$appointment->remark}}</td>
