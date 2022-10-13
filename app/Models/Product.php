@@ -18,6 +18,6 @@ class Product extends Model
     ];
 
     public function cat(){
-        return $this->hasOne(ProductCatogory::class);
+        return ProductCatogory::findOrFail($this->product_catogory_id);
     }
 }

@@ -1,4 +1,39 @@
 @extends('layouts.auth')
 @section('content')
-    <h1>Producten TABEL</h1>
-@endsection
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-card mb-3 card">
+                <div class="card-header">Al onze standaard producten</div>
+                <div class="table-responsive">
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Naam</th>
+                            <th class="text-center">Beschrijving</th>
+                            <th class="text-center">Prijs</th>
+                            <th class="text-center">Categorie</th>
+                            <th class="text-center">Laatst geupdate</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($products as $product)
+                            <tr>
+                                <td class="text-muted text-center">{{$product->name}}</td>
+                                <td class="text-muted text-center">{{$product->description}}</td>
+                                <td class="text-muted text-center">{{$product->price}}</td>
+                                <td class="text-muted text-center">{{$product->cat()->name}}</td>
+                                <td class="text-muted text-center">{{$product->updated_at}}</td>
+                                <td class="text-center">
+                                    <a href="" class="btn btn-warning text-white">Remove</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-block text-center card-footer">
+                    <a href="{{route('products.create')}}" class="db-btn2 btn">Product aanmaken</a>
+                </div>
+            </div>
+        </div>
+    </div>@endsection

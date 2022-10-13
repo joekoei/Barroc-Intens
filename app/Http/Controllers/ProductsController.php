@@ -13,7 +13,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('authenticated.products.index');
+        $products = Product::all();
+        return view('authenticated.products.index')->with(compact('products'));
     }
 
     /**

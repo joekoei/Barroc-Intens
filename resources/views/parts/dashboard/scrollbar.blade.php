@@ -12,7 +12,7 @@
                         <i class='bx bxs-contact'></i>
                         Contact formulieren
                     </a>
-                    <a href="" id="home.side" style="font-size: 20px; margin-left: 0!important; padding-left: 10px!important;">
+                    <a href="{{route('products.index')}}" id="home.side" style="font-size: 20px; margin-left: 0!important; padding-left: 10px!important;">
                         <i class='bx bxl-product-hunt' ></i>
                         Producten (zien)
                     </a>
