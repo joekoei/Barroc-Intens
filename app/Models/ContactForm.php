@@ -9,5 +9,10 @@ class ContactForm extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "subject",
+        "content"
+    ];
+
     protected $table = "contact_form";
 }

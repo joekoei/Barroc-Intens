@@ -2,7 +2,7 @@
 @section('content')
     <h2 class="text-center">Lease contract</h2>
     <div class="container">
-        <form action="" method="post">
+        <form action="{{route('bkr.store')}}" method="post">
             <input type="hidden" name="subject" value="bkr-check">
             @csrf
             <div class="row">
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="checkbox">
+                        <input type="checkbox" name="bkrcheck_complete">
                         <label class="form-check-label" for="bkrCheck">
                             Bkr check completed
                         </label>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="checkbox" id="flexSwitchCheckDefault">
+                        <input type="checkbox" id="flexSwitchCheckDefault" name="bkrcheck_result">
                         <label for="bkrCheck">
                             Is de bkr check positief?
                         </label>

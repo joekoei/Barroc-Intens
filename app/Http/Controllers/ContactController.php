@@ -14,7 +14,7 @@ class ContactController extends Controller
     {
         $data = $request->except(['_token','subject']);
 
-        new ContactForm([
+        ContactForm::create([
             'subject'=>$request->subject,
             'content'=>json_encode($data)
         ]);
@@ -24,7 +24,7 @@ class ContactController extends Controller
     public function storeBKR(Request $request){
         $data = $request->except(['_token','subject']);
 
-        new ContactForm([
+        ContactForm::create([
             'subject'=>$request->subject,
             'content'=>json_encode($data)
         ]);
