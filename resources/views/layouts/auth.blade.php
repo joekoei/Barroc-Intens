@@ -20,7 +20,7 @@
     <div class="app-header header-shadow">
         <div class="app-header__logo">
             <div class="logo">
-                <h1 class="text-3xl db-let text-[#FDD716]">{{str_replace("_", " ", env("app_name"))}}</h1>
+                <h1 class="text-3xl db-let db-color-gray">{{str_replace("_", " ", env("app_name"))}}</h1>
             </div>
             <div class="header__pane ml-auto">
                 <div>
@@ -51,23 +51,6 @@
                 </span>
         </div>
         <div class="app-header__content">
-            <div class="app-header-left">
-                <div class="search-wrapper">
-                    <div class="input-holder">
-                        <input type="text" class="search-input" placeholder="Type to search">
-                        <button class="search-icon"><span></span></button>
-                    </div>
-                    <button class="close"></button>
-                </div>
-                <ul class="header-menu nav">
-                    <li class="btn-group nav-item">
-                        <a href="" class="nav-link">
-                            <i class="nav-link-icon fa fa-edit"></i>
-                            {{Auth::user()->role()->name}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <div class="app-header-right">
                 <div class="header-btn-lg pr-0">
                     <div class="widget-content p-0">
@@ -75,11 +58,9 @@
                             <div class="widget-content-left">
                                 <div class="btn-group">
                                     <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                        <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        <i class='bx bx-chevron-down db-force' ></i>
                                     </a>
                                     <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                        <button type="button" tabindex="0" class="dropdown-item">Bewerk je gegevens</button>
-                                        <div tabindex="-1" class="dropdown-divider"></div>
                                         <a href="{{route('uitlog')}}" tabindex="0" class="dropdown-item">Uitloggen</a>
                                     </div>
                                 </div>
@@ -94,7 +75,7 @@
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
                                 <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                    <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                                    <i class='bx bxs-user-account' ></i>
                                 </button>
                             </div>
                         </div>
@@ -143,8 +124,7 @@
                     <div class="page-title-wrapper">
                         <div class="page-title-heading">
                             <div class="page-title-icon">
-                                <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                                </i>
+                                <i class='bx bxs-coffee-bean' ></i>
                             </div>
                             <div>{{str_replace("_", " ", env("app_name"))}}
                                 <div class="page-title-subheading">Dit is jouw interne platform voor Barroc Intens.
