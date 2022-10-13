@@ -36,6 +36,10 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("products",ProductsController::class);
     });
 
+    Route::prefix("maintenance")->group(function () {
+        Route::resource("maintenance",\App\Http\Controllers\ErrorMaintenanceControllor::class);
+    });
+
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
     Route::post('/bkr',[ContactController::class,'storeBKR'])->name('bkr.store');
 

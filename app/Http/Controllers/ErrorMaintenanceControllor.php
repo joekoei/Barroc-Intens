@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Maintenance;
 use Illuminate\Http\Request;
 
 class ErrorMaintenanceControllor extends Controller
@@ -13,7 +14,8 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function index()
     {
-        return view('maintenance.errors.index');
+        $meetings = Maintenance::all();
+        return view('index')->with(compact('meetings'));
     }
 
     /**
