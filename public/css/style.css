@@ -195,12 +195,13 @@ nav .row {
     padding: 175px;
 }
 
-<<<<<<< Updated upstream
 .db-force {
-    font-size: 20px; margin-left: 0!important; padding-left: 10px!important;
-=======
+    font-size: 20px;
+    margin-left: 0 !important;
+    padding-left: 10px !important;
+}
+
 .db-link{
     text-decoration: none;
     color: white;
->>>>>>> Stashed changes
 }
