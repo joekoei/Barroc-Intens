@@ -38,7 +38,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     });
 
     Route::prefix("maintenance")->group(function () {
-        Route::resource("maintenance",ErrorMaintenanceControllor::class);
+        Route::resource("meetings",ErrorMaintenanceControllor::class);
     });
 
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
