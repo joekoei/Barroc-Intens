@@ -9,5 +9,10 @@ class ProductCatogory extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'is_employee_only'
+    ];
+
     protected $table = "product_catogories";
 }

@@ -1,6 +1,12 @@
 <div class="scrollbar-sidebar">
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
+            <li class="app-sidebar__heading">Algemeen</li>
+            <li>
+                <a href="{{route('dashboard')}}">
+                    Homepage
+                </a>
+            </li>
             @if(Auth::user()->role()->name == "sales")
                 <li class="app-sidebar__heading">Sales</li>
                 <li>
