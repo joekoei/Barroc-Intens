@@ -9,4 +9,11 @@ class Maintenance extends Model
 {
     use HasFactory;
     protected $table = 'maintenance_appointments';
+
+
+    public function company(){
+        return Company::findOrFail($this->company_id);
+    }
+
+    // $appointment->company()->name
 }
