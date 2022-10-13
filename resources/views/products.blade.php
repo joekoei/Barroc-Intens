@@ -15,6 +15,7 @@
                     <p> {{$product-> description}}</p>
                     <img src="{{$product->image_paths}}" width="200px">
                     <p> {{$product-> price}}</p>
+                    <a class="db-btn padding-bot" href="{{route('offers')}}">Contact Opnemen</a>
                 @endforeach
             </div>
         </div>

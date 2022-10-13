@@ -26,6 +26,8 @@ Route::get('/', [PagesController::class,'index'])->name('homepage');
 
 Route::get("/products",[PagesController::class,'products'])->name('products');
 
+Route::get('/offers', [PagesController::class,'offers'])->name('offers');
+
 Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
