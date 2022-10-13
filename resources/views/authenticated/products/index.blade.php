@@ -24,10 +24,14 @@
                                 <td class="text-muted text-center">{{$product->cat()->name}}</td>
                                 <td class="text-muted text-center">{{$product->updated_at}}</td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-success text-white">Edit</a>
+                                    <a href="{{route('products.edit', $product)}}" class="btn btn-success text-white">Edit</a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-warning text-white">Remove</a>
+                                    <form id="delete.form" action="{{route('products.destroy', $product->id)}}" method="post" class="d-hidden">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" class="btn btn-warning text-white" value="Remove">
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

@@ -67,7 +67,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('authenticated.products.edit')->with(compact('product'));
+        $product_cats = ProductCatogory::all();
+        return view('authenticated.products.edit')->with(compact('product','product_cats'));
     }
 
     /**
@@ -79,7 +80,13 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->product_catogory_id = $request->cat;
+        $product->save();
+        return redirect()->route('products.index');
     }
 
     /**
@@ -89,7 +96,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Product::findOrFail($id)->delete();
-        return view('authenticated.products.index');
+        Product::destroy($id);
+        return back();
     }
 }
