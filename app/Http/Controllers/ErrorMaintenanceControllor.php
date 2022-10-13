@@ -15,7 +15,7 @@ class ErrorMaintenanceControllor extends Controller
     public function index()
     {
         $meetings = Maintenance::all();
-        return view('index')->with(compact('meetings'));
+        return view('authenticated.maintenance.errors.index')->with(compact('meetings'));
     }
 
     /**

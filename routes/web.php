@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\PagesController;
@@ -37,7 +38,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     });
 
     Route::prefix("maintenance")->group(function () {
-        Route::resource("maintenance",\App\Http\Controllers\ErrorMaintenanceControllor::class);
+        Route::resource("maintenance",ErrorMaintenanceControllor::class);
     });
 
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
