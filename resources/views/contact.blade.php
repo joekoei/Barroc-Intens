@@ -1,5 +1,4 @@
 @extends('layouts.base')
-
 @section('content')
     <div class="bg-image row w-100 align-items-center">
         <div class="align-middle">
@@ -8,7 +7,7 @@
                     <p class="text-white fs-4">Het nummer 1 koffiemerk ter wereld</p>
                     <div class="w-50 p-3 mx-auto d-flex justify-content-evenly db-margin-button">
                 </div>
-            </div>1
+            </div>
         </div>
     </div>
 <div class="container w-50">
