@@ -1,4 +1,4 @@
-<div class="bg-image w-100 align-items-center">
+<div class="bg-black w-100 align-items-center">
     <nav class="container">
         <div class="row pt-3 w-100">
             <div class="col-sm px-2 py-2">
