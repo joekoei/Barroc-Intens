@@ -28,7 +28,7 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
-Route::prefix("dashboard")->group(function (){
+Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::get('/',[DashboardController::class,'index']);
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
@@ -36,5 +36,4 @@ Route::prefix("dashboard")->group(function (){
         Route::resource("invoices", InvoicesController::class);
     });
 });
-
 require __DIR__.'/auth.php';

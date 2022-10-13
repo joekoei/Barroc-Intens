@@ -1,7 +1,7 @@
 @extends('layouts.login.accounts')
 @section('content')
     <div
-        class="bg-[url('{{asset('img/banner-BG.jpg')}}')] absolute top-0 left-0 bg-cover bottom-0 leading-5 h-screen w-screen overflow-hidden">
+        class="bg-[url('{{asset('img/banner-BG.png')}}')] absolute top-0 left-0 bg-cover bottom-0 leading-5 h-screen w-screen overflow-hidden">
 
     </div>
     <div class="relative   min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent rounded-3xl shadow-xl">
