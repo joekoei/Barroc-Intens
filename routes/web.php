@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::prefix("dashboard")->group(function (){
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
         Route::resource("products",ProductsController::class);
+        Route::resource("invoices", InvoicesController::class);
     });
 });
 
