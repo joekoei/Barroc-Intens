@@ -8,17 +8,15 @@
                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                         <thead>
                         <tr>
-                            <th class="text-center">Naam</th>
-                            <th class="text-center">Beschrijving</th>
-                            <th class="text-center">Prijs</th>
-                            <th class="text-center">Categorie</th>
-                            <th class="text-center">Laatst geupdate</th>
+                            <th class="text-center">Bedrijfs_id</th>
+                            <th class="text-center">Remark</th>
+                            <th class="text-center">Aangemaakt op</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($meetings as $appointment)
                             <tr>
-                                <td class="text-muted text-center">{{$appointment->company_id}}</td>
+                                <td class="text-muted text-center">{{$appointment->company()->name}}</td>
                                 <td class="text-muted text-center">{{$appointment->remark}}</td>
                                 <td class="text-muted text-center">{{$appointment->created_at}}</td>
                             </tr>
