@@ -31,6 +31,16 @@
         </div>
         <div class="row">
             <div class="col-md-6 padding-bot">
+                <label for="phoneNumber">TelefoonNummer:</label>
+                <input class="form-control" type="text" name="phoneNumber" id="lastNameInput">
+            </div>
+            <div class="col-md-6 padding-bot">
+                <label for="">Bedrijfs naam:</label>
+                <input class="form-control" type="text" name="companyName" id="companyName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 padding-bot">
                 <label for="lastNameInput">Onderwerp:</label>
                 <input type="hidden" name="subject" value="{{$productname}}">
                 <input value="{{$productname}}" class="form-control" type="text" name="subject" id="lastNameInput" disabled>
