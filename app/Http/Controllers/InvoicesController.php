@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Invoice;
 use Illuminate\Http\Request;
 use App\Models\invoices;
 
@@ -15,7 +16,8 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        //
+        $invoices = Invoice::all();
+        return view('authenticated.finance.index')->with(compact('invoices'));
     }
 
     /**
@@ -38,13 +40,13 @@ class InvoicesController extends Controller
     public function store(Request $request)
     {
 //        dd($request->all());
-        invoices::create([
+        Invoice::create([
             "company_id"=>$request->comp,
             "date"=>$request->date,
             "paid_at"=>$request->paid_at,
         ]);
 
-        return redirect()->route('finance.index');
+        return redirect()->route('invoices.index');
     }
 
     /**
@@ -66,9 +68,9 @@ class InvoicesController extends Controller
      */
     public function edit($id)
     {
-        $companies = Company::findOrFail($id);
-        $invoices = invoices::findOrFail($id);
-        return view('authenticated.finance.edit')->with(compact('invoices', 'companies'));
+        $companies = Company::all();
+        $invoice = Invoice::findOrFail($id);
+        return view('authenticated.finance.edit')->with(compact('invoice', 'companies'));
     }
 
     /**

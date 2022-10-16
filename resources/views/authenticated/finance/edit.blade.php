@@ -8,8 +8,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="first">Bedrijf</label>
-                        <select class="form-select" name="companies" id="companies" value="{{companies->name}}">
-                            <option selected>Choose...</option>
+                        <select class="form-select" name="companies" id="companies">
+                            <option selected value="{{$invoice->company()->id}}">{{$invoice->company()->name}}</option>
                             @foreach($companies as $comp)
                                 <option value="{{$comp->id}}">{{$comp->name}}</option>
                             @endforeach
@@ -19,13 +19,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="first">Datum</label>
-                        <input type="date" class="form-control" placeholder="" id="date" name="date" value="{{$invoices->date}}">
+                        <input type="date" class="form-control" placeholder="" id="date" name="date" value="{{$invoice->date}}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="last">Betaald op</label>
-                        <input type="date" class="form-control" placeholder="" id="paid_at" name="paid_date" value="{{$invoices->paid_date}}">
+                        <input type="date" class="form-control" placeholder="" id="paid_at" name="paid_date" value="{{$invoice->paid_date}}">
                     </div>
                 </div>
             </div>
