@@ -24,7 +24,7 @@ class InvoicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('authenticated.finance.create');
     }
 
     /**
@@ -35,7 +35,12 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        invoices::create([
+            "date"=>$request->date,
+            "paid_at"=>$request->paid_at
+        ]);
+
+        return redirect()->route('finance.index');
     }
 
     /**
@@ -57,7 +62,8 @@ class InvoicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $invoices = invoices::findOrFail($id);
+        return view('authenticated.finance.edit')->with(compact('invoices'));
     }
 
     /**
