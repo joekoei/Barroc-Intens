@@ -9,6 +9,6 @@ class invoices extends Model
 {
     use HasFactory;
     protected $table = "custom_invoices";
-    protected $fillable = ['date','paid_at'];
+    protected $fillable = ['company_id','date','paid_at'];
 
 }
