@@ -11,6 +11,8 @@
                             <th class="text-center">Bedrijfsnaam</th>
                             <th class="text-center">Betaald op</th>
                             <th class="text-center">Aangemaakt op</th>
+                            <th class="text-center">Bewerken</th>
+                            <th class="text-center">Verwijderen</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -19,12 +21,21 @@
                                 <td class="text-muted text-center">{{$invoice->company()->name}}</td>
                                 <td class="text-muted text-center">{{$invoice->paid_at}}</td>
                                 <td class="text-muted text-center">{{$invoice->date}}</td>
+                                <td class="text-muted text-center"><a href="{{route('invoices.edit', $invoice)}}" class="btn btn-info">Aanpassen</a></td>
+                                <td class="text-muted text-center"><a href="">
+                                        <form action="{{route('invoices.destroy', $invoice->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" value="Verwijderen" class="btn btn-danger">
+                                        </form>
+                                    </a></td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+            <a class="btn btn-primary" href="{{route('invoices.create')}}">Maak nieuwe factuur aan</a>
         </div>
     </div>
 @endsection
