@@ -30,7 +30,7 @@
                     <p class="text-white fs-4">Het nummer 1 koffiemerk ter wereld</p>
                     <div class="w-50 p-3 mx-auto d-flex justify-content-evenly db-margin-button">
                         <button class="db-btn">Koffie</button>
-                        <button class="db-btn2">Machines</button>
+                        <a href="{{route('products')}}"><button class="db-btn2" >Machines</button></a>
                     </div>
                 </div>
             </div>
