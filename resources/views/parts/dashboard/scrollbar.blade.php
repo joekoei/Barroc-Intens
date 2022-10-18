@@ -15,7 +15,7 @@
                         <i class='bx bx-comment-detail'></i>
                         Contracten
                     </a>
-                    <a href="" id="home.side" class="db-force">
+                    <a href="{{route('contact')}}" id="home.side" class="db-force">
                         <i class='bx bxs-contact'></i>
                         Contact formulieren
                     </a>
@@ -56,7 +56,7 @@
             @if(Auth::user()->role()->name == "finance")
             <li class="app-sidebar__heading db-color-yellow">Finance</li>
             <li>
-                <a href=""  id="factuur.side" class="db-force">
+                <a href="{{route('invoices.index')}}"  id="factuur.side" class="db-force">
                     <i class="metismenu-icon pe-7s-display2"></i>
                     Facturen
                 </a>
