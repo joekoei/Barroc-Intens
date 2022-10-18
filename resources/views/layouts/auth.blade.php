@@ -126,8 +126,8 @@
                             <div class="page-title-icon">
                                 <i class='bx bxs-coffee-bean' ></i>
                             </div>
-                            <div>{{str_replace("_", " ", env("app_name"))}}
-                                <div class="page-title-subheading">Dit is jouw interne platform voor Barroc Intens.
+                            <div>
+                                <div class="page-title-subheading">Dit is jouw interne platform voor {{str_replace("_", " ", env("app_name"))}}.
                                 </div>
                             </div>
                         </div>
@@ -139,5 +139,8 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script></body>
+    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    </div>
+</body>
 </html>
