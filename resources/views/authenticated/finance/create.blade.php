@@ -7,6 +7,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="first">Naam klant</label>
+                        <input type="text" class="form-control" placeholder="Voornaam" id="firstname" name="firstname">
+                    </div>
+                </div><div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first">Achternaam klant</label>
+                        <input type="text" class="form-control" placeholder="Achternaam" id="lastname" name="lastname">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="first">Bedrijf</label>
                         <select class="form-select" name="comp" id="comp">
                             <option selected>Choose...</option>
@@ -14,6 +25,18 @@
                                 <option value="{{$comp->id}}">{{$comp->name}}</option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first">Gemaakte afspraken</label>
+                        <textarea class="form-control" name="gemaakte_afspraken" id="gemaakte_afspraken" placeholder="Extra informatie" cols="85" rows="1"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="last">Prijs</label>
+                        <input type="text" class="form-control" placeholder="Prijs in €" id="prijs" name="prijs">
                     </div>
                 </div>
                 <div class="col-md-6">
