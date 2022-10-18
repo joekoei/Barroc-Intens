@@ -44,6 +44,10 @@ class InvoicesController extends Controller
             "company_id"=>$request->comp,
             "date"=>$request->date,
             "paid_at"=>$request->paid_at,
+            "naam_klant"=>$request->firstname,
+            "achternaam_klant"=>$request->lastname,
+            "gemaakte_afspraken"=>$request->gemaakte_afspraken,
+            "prijs"=>$request->prijs
         ]);
 
         return redirect()->route('invoices.index');

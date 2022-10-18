@@ -9,7 +9,7 @@ class Invoice extends Model
 {
     use HasFactory;
     protected $table = "custom_invoices";
-    protected $fillable = ['company_id','date','paid_at'];
+    protected $fillable = ['company_id','date','paid_at','naam_klant','achternaam_klant','gemaakte_afspraken','prijs'];
 
 
     public function company(){
