@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function role(){
         return Role::findOrFail($this->role_id);
     }
+
+    public function company(){
+        return Company::all()->where('contact_id','=',$this->id);
+    }
 }
