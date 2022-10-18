@@ -15,30 +15,27 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $sale = new Role([
+        Role::create([
             "name"=>"sales"
         ]);
-        $sale->save();
 
-        $maintenance = new Role([
+        Role::create([
             'name'=>"maintenance"
         ]);
-
-        $maintenance->save();
-
-        $inkoop = new Role([
+        Role::create([
             "name"=>"inkoop"
         ]);
-        $inkoop->save();
 
-        $finance = new Role([
+        Role::create([
             "name"=>"finance"
         ]);
-        $finance->save();
 
-        $klant = new Role([
+        Role::create([
             "name"=>"klant"
         ]);
-        $klant->save();
+
+        Role::create([
+            "name"=>"head-maintenance"
+        ]);
     }
 }

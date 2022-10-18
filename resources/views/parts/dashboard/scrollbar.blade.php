@@ -25,7 +25,7 @@
                     </a>
                 </li>
             @endif
-            @if(Auth::user()->role()->name == "maintenance")
+            @if(Auth::user()->role()->name == "maintenance" || Auth::user()->role()->name == "head-maintenance")
                 <li class="app-sidebar__heading db-color-yellow" >Maintenance</li>
                 <li>
                     <a href="{{route('meetings.index')}}" id="agenda.side" class="db-force">
