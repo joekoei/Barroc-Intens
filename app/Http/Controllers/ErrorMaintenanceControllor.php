@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Maintenance;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,9 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function create()
     {
-        //
+        $meetings = Maintenance::all();
+        $companies = Company::all();
+        return view('authenticated.maintenance.errors.create')->with(compact('meetings' , 'companies'));
     }
 
     /**
@@ -36,7 +39,15 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Maintenance::create([
+            "name"=>$request->name,
+            "description"=>$request->description,
+            "image_paths"=>$request->image_paths,
+            "price"=>$request->price,
+            "product_catogory_id"=>$request->cat
+        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
