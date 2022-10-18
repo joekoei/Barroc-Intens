@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class,'index'])->name('homepage');
 
-
 Route::get("/products",[PagesController::class,'products'])->name('products');
 
 Route::get('/offers/{id}', [PagesController::class,'offers'])->name('offers');
@@ -39,7 +38,6 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
         Route::resource("products",ProductsController::class);
-
         Route::get('/clients',[ClientsController::class,'index'])->name('klant.index');
         Route::get('/clients/{user}/note',[ClientsController::class,'client'])->name('klant.show');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
