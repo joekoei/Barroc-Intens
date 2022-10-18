@@ -23,6 +23,10 @@
                         <i class='bx bx-coffee-togo' ></i>
                         Producten
                     </a>
+                    <a href="{{route('klant.index')}}" id="home.side" class="db-force">
+                        <i class='bx bx-comment-detail'></i>
+                        Klanten
+                    </a>
                 </li>
             @endif
             @if(Auth::user()->role()->name == "maintenance" || Auth::user()->role()->name == "head-maintenance")

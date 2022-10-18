@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ErrorMaintenanceControllor;
@@ -38,6 +39,10 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
         Route::resource("products",ProductsController::class);
+
+        Route::get('/clients',[ClientsController::class,'index'])->name('klant.index');
+        Route::get('/clients/{user}/note',[ClientsController::class,'client'])->name('klant.show');
+        Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
     });
 
     Route::prefix("maintenance")->group(function () {
