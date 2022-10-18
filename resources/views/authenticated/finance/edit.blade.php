@@ -2,8 +2,9 @@
 @section('content')
     <h2 class="text-center">Bewerk het aangemaakte factuur</h2>
     <div class="container">
-        <form method="post" action="{{route('invoices.edit')}}">
+        <form method="post" action="{{route('invoices.update', $invoice->id)}}">
             @csrf
+            @method('PUT')
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">

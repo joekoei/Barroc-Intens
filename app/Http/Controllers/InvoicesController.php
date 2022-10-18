@@ -82,7 +82,9 @@ class InvoicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $invoice = Invoice::findOrFail($id);
+        $invoice->update($request->except('_token','_method'));
+        return redirect()->route('invoices.index');
     }
 
     /**
@@ -93,6 +95,7 @@ class InvoicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Invoice::destroy($id);
+        return redirect()->route('invoices.index')->with('message', "Factuur is succesvol verwijderd");
     }
 }
