@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function index(Request $request){
+        $contact = ContactForm::all();
         return view('contact');
     }
     public function store(Request $request)
@@ -20,6 +21,12 @@ class ContactController extends Controller
             'content'=>json_encode($data)
         ]);
         return redirect()->route('products');
+    }
+
+    public function show($id){
+        $contact= ContactForm::findOrFail($id);
+        return view('authenticated.contact.see')->with(compact('contact'));
+
     }
 
     public function storeBKR(Request $request){
