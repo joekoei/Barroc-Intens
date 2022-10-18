@@ -29,7 +29,7 @@
                 <li class="app-sidebar__heading db-color-yellow" >Maintenance</li>
                 <li>
                     @if(Auth::user()->role()->name == "head-maintenance")
-                        <a href="{{route('meetings.index')}}" id="agenda.side" class="db-force">
+                        <a href="{{route('maintenance.plan')}}" id="agenda.side" class="db-force">
                             <i class='bx bxs-calendar' ></i>
                             Plan afspraken in
                         </a>

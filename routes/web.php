@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +42,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
 
     Route::prefix("maintenance")->group(function () {
         Route::resource("meetings",ErrorMaintenanceControllor::class);
+        Route::get('/plan',[MaintenanceMeetingController::class,"index"])->name('maintenance.plan');
     });
 
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');

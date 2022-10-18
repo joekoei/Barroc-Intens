@@ -15,6 +15,7 @@
     <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet"></head>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.css">
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
     <div class="app-header header-shadow">
