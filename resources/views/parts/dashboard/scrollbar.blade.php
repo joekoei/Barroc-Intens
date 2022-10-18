@@ -56,6 +56,33 @@
                 </a>
             </li>
             @endif
+            @if(Auth::user()->role()->name == "klant")
+                <li class="app-sidebar__heading db-color-yellow">Klant</li>
+                <li>
+                    <a href=""  id="klanten.side" class="db-force">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Mijn contracten
+                    </a>
+                </li>
+                <li>
+                    <a href=""  id="klanten.side" class="db-force">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Mijn facturen
+                    </a>
+                </li>
+                <li>
+                    <a href=""  id="klanten.side" class="db-force">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Mijn storingen
+                    </a>
+                </li>
+                <li>
+                    <a href=""  id="klanten.side" class="db-force">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Mijn gegevens
+                    </a>
+                </li>
+            @endif
         </ul>
     </div>
 </div>
