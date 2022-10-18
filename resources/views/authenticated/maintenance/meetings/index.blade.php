@@ -1,5 +1,6 @@
 @extends('layouts.auth')
 @section('content')
+
     <div id='test'></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
