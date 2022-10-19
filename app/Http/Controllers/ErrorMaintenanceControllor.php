@@ -41,13 +41,13 @@ class ErrorMaintenanceControllor extends Controller
     {
         Maintenance::create([
             "name"=>$request->name,
-            "description"=>$request->description,
-            "image_paths"=>$request->image_paths,
-            "price"=>$request->price,
+            "remark"=>$request->remark,
+            "company_id"=>$request->comp,
+            "date_added"=>$request->date,
             "product_catogory_id"=>$request->cat
         ]);
 
-        return redirect()->route('products.index');
+        return redirect()->route('errors.index');
     }
 
     /**
@@ -58,7 +58,8 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function show($id)
     {
-
+        $meeting = Maintenance::findOrFail($id);
+        return view('authenticated.errors.show')->with(compact('meeting'));
     }
 
     /**
