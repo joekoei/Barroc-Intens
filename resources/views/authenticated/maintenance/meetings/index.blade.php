@@ -6,9 +6,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('test');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridWeek'
+                nextDayThreshold:'23:59',
+                initialView: 'dayGridMonth',
             });
-            calendar.render();
+            <?php
+            foreach ($meetings as $meeting):
+            ?>
+            calendar.addEvent({
+                title: '<?php echo $meeting->remark ?>',
+                start: '<?php echo $meeting->date_added ?>',
+                end: '<?php echo $meeting->date_added ?>',
+                allDay: true
+            });
+            <?php endforeach;?>
+            setTimeout(() => {
+                calendar.render();
+            },10)
         });
     </script>
 @endsection
