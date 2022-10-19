@@ -65,11 +65,11 @@
             <li class="app-sidebar__heading db-color-yellow">Finance</li>
             <li>
                 <a href="{{route('invoices.index')}}"  id="factuur.side" class="db-force">
-                    <i class="metismenu-icon pe-7s-display2"></i>
+                    <i class='bx bx-money'></i>
                     Facturen
                 </a>
                 <a href=""  id="factuur.side" class="db-force">
-                    <i class="metismenu-icon pe-7s-display2"></i>
+                    <i class='bx bxs-book-content'></i>
                     Leasecontracten
                 </a>
             </li>
