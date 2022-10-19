@@ -1,26 +1,22 @@
 @extends('layouts.base')
 @include('parts.header')
 @section('content')
-    <div class="container padding-bot-top">
-        <div class="row db-margin gx-5">
-{{--            Filteren--}}
-{{--            <div class="col-sm-3">--}}
-{{--                <h3 class="db-subtitle"> Filteren </h3>--}}
-{{--            </div>--}}
-{{--            Products  --}}
+    <div class="container d-flex justify-content-center">
+        <div class="row mt-5">
             @foreach($products as $product)
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem; margin: 10px;">
-                        <img src="{{$product->image_paths}}" class="card-img-top" alt="Picture">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$product->name}}</h5>
-                            <p class="card-text" @if($product->cat()->id == 1) style="height: 30px;" @else style="height: 150px;" @endif>{{$product->description}}</p>
-                            <a href="{{route('offers',$product->id)}}" class="btn btn-primary">Contact opnemen?</a>
+            <div class="col-sm-3">
+                <div class="card mb-2">
+                    <img src="{{asset($product->image_paths)}}" class="card-img-top" style="width: 100%;">
+                    <div class="card-body pt-0 px-0">
+                        <div class="d-flex flex-row justify-content-between mb-0 px-3">
+                            <h6>{{$product->name}}</h6>
                         </div>
+                        <hr class="mt-2 mx-3">
+                        <div class="mx-3 mt-3 mb-2"><a href="{{route('offers',$product->id)}}" class="btn btn-warning btn-block"><small>BUILD & PRICE</small></a></div>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
-
 @endsection
