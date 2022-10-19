@@ -1,7 +1,8 @@
 @extends('layouts.base')
 @include('parts.header')
 @section('content')
-<div class="container w-50 padding-bot-top">
+    <body class="db-background-gray"></body>
+<div class="container w-50 padding-bot-top text-white">
     <form action="{{route('contact.store')}}" method="post">
         @csrf
         <div class="row">
@@ -52,7 +53,7 @@
         </div>
         <br>
         <div>
-            <input type="submit" class="db-btn" value="Verzend">
+            <input type="submit" class="db-btn2" value="Verzend">
         </div>
     </form>
 @endsection
