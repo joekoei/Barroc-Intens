@@ -16,7 +16,7 @@ class ErrorMaintenanceControllor extends Controller
     public function index()
     {
         $meetings = Maintenance::all();
-        return view('authenticated.maintenance.errors.index')->with(compact('meetings'));
+        return view('authenticated.maintenance.meetings.index')->with(compact('meetings'));
     }
 
     /**
@@ -45,7 +45,7 @@ class ErrorMaintenanceControllor extends Controller
             "date_added"=>$request->date,
         ]);
 
-        return redirect()->route('errors.index');
+        return redirect()->route('meetings.index');
     }
 
     /**
@@ -69,7 +69,7 @@ class ErrorMaintenanceControllor extends Controller
     public function edit($id)
     {
         $meeting = Maintenance::findOrFail($id);
-        return view('authenticated.errors.edit')->with(compact('meeting'));
+        return view('authenticated.meetings.edit')->with(compact('meeting'));
     }
 
     /**
@@ -86,7 +86,7 @@ class ErrorMaintenanceControllor extends Controller
         $meeting->company_id = $request->comp;
         $meeting->date_added= $request->date;
         $meeting->save();
-        return redirect()->route('errors.index');
+        return redirect()->route('meetings.index');
     }
 
     /**
