@@ -13,7 +13,7 @@
                 <li>
                     <a href="" id="home.side" class="db-force">
                         <i class='bx bx-comment-detail'></i>
-                        Contracten
+                        Offertes
                     </a>
                     <a href="{{route('contact')}}" id="home.side" class="db-force">
                         <i class='bx bxs-contact'></i>
@@ -46,6 +46,10 @@
                         <i class='bx bxs-user-account' ></i>
                         Overzicht klanten
                     </a>
+                        <a href="" id="agenda.side" class="db-force">
+                            <i class='bx bxs-user-account' ></i>
+                            Werk bonnen
+                        </a>
                 </li>
             @endif
             @if(Auth::user()->role()->name == "inkoop")
@@ -64,6 +68,10 @@
                     <i class="metismenu-icon pe-7s-display2"></i>
                     Facturen
                 </a>
+                <a href=""  id="factuur.side" class="db-force">
+                    <i class="metismenu-icon pe-7s-display2"></i>
+                    Leasecontracten
+                </a>
             </li>
             @endif
             @if(Auth::user()->role()->name == "klant")
@@ -73,20 +81,14 @@
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn contracten
                     </a>
-                </li>
-                <li>
                     <a href=""  id="klanten.side" class="db-force">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn facturen
                     </a>
-                </li>
-                <li>
                     <a href=""  id="klanten.side" class="db-force">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn storingen
                     </a>
-                </li>
-                <li>
                     <a href=""  id="klanten.side" class="db-force">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn gegevens
