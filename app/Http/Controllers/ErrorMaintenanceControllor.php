@@ -40,11 +40,9 @@ class ErrorMaintenanceControllor extends Controller
     public function store(Request $request)
     {
         Maintenance::create([
-            "name"=>$request->name,
             "remark"=>$request->remark,
             "company_id"=>$request->comp,
             "date_added"=>$request->date,
-            "product_catogory_id"=>$request->cat
         ]);
 
         return redirect()->route('errors.index');
@@ -70,7 +68,8 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function edit($id)
     {
-        //
+        $meeting = Maintenance::findOrFail($id);
+        return view('authenticated.errors.edit')->with(compact('meeting'));
     }
 
     /**
@@ -82,7 +81,12 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $meeting = Maintenance::findOrFail($id);
+        $meeting->remark = $request->remark;
+        $meeting->company_id = $request->comp;
+        $meeting->date_added= $request->date;
+        $meeting->save();
+        return redirect()->route('errors.index');
     }
 
     /**
@@ -93,6 +97,7 @@ class ErrorMaintenanceControllor extends Controller
      */
     public function destroy($id)
     {
-        //
+        Maintenance::destroy($id);
+        return back();
     }
 }
