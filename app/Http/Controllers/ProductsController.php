@@ -18,11 +18,6 @@ class ProductsController extends Controller
         return view('authenticated.products.index')->with(compact('products'));
     }
 
-    public function search(){
-
-
-    }
-
     /**
      * Show the form for creating a new resource.
      *
