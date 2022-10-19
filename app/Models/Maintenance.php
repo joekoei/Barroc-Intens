@@ -9,7 +9,7 @@ class Maintenance extends Model
 {
     use HasFactory;
     protected $table = 'maintenance_appointments';
-    protected $fillable = ['remark'];
+    protected $fillable = ['remark','company_id',"date_added"];
 
 
     public function company(){
