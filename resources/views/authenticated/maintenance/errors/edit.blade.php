@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{route('errors.update', $meeting->id)}}" method="post">
+        <form action="{{route('meetings.update', $meeting->id)}}" method="post">
             @method('PUT')
             @csrf
             <div class="form-group">

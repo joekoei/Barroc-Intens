@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{route('errors.store')}}" method="POST">
+        <form action="{{route('meetings.store')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="remark">Remark</label>

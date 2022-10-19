@@ -9,6 +9,7 @@ class Maintenance extends Model
 {
     use HasFactory;
     protected $table = 'maintenance_appointments';
+    protected $fillable = ['remark'];
 
 
     public function company(){
