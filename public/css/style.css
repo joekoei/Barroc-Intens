@@ -45,7 +45,7 @@ nav .row {
 }
 
 .bg-image{
-    background-image: url("../img/banner-BG.png");
+    background-image: url("../img/banner-BG-min.png");
     height: 120vh; background-size: cover; background-position: bottom center;
     margin-right: 0!important;
     margin-left: 0!important;
