@@ -1,4 +1,7 @@
 <div>
+    <div class="container ">
+        <input wire:model="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    </div>
     <div class="container d-flex justify-content-center">
         <div class="row mt-5">
     @foreach($products as $product)

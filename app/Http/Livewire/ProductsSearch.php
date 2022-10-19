@@ -15,7 +15,7 @@ class ProductsSearch extends Component
     public function render()
     {
         return view('livewire.products-search' , [
-            'products' => Product::all()
+            'products' => Product::search('name', $this->search)->paginate()
         ]);
     }
 }
