@@ -17,7 +17,7 @@ class Maintenance extends Model
     }
 
     public function user(){
-        return User::finOrFail($this->user_id);
+        return User::findOrFail($this->user_id);
     }
 
     // $appointment->company()->name
