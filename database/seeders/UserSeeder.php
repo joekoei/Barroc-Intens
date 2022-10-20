@@ -57,5 +57,19 @@ class UserSeeder extends Seeder
             "password"=>Hash::make("Maintenance123"),
             "role_id"=>6
         ]);
+
+        User::create([
+            "name"=>"Sjakie van de TD",
+            "email"=>"sjakie@barroc.nl",
+            "password"=>Hash::make("sjakie"),
+            'role_id'=>2
+        ]);
+
+        User::create([
+            "name"=>"Harry van de TD",
+            "email"=>"harry@barroc.nl",
+            "password"=>Hash::make("harry"),
+            'role_id'=>2
+        ]);
     }
 }
