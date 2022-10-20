@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\WorkOrder;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class WorkOrderController extends Controller
      */
     public function index()
     {
-        //
+        $workorders= WorkOrder::all();
+        return view('authenticated.maintenance.workorders.index')->with(compact('workorders'));
     }
 
     /**
@@ -47,7 +49,7 @@ class WorkOrderController extends Controller
             'when'=>$request->when,
             'location'=>$request->location,
         ]);
-        return redirect()->route('');
+        return redirect()->route('workorder');
     }
 
     /**
@@ -69,7 +71,8 @@ class WorkOrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $workorder = WorkOrder::findOrFail($id);
+        return view('authenticated.maintenance.workorders.edit')->with(compact('workorder'));
     }
 
     /**
@@ -81,7 +84,9 @@ class WorkOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $workorder = WorkOrder::findOrFail($id);
+        $workorder->update($request->except('_token','_method'));
+        return redirect()->route('workorders.index');
     }
 
     /**
@@ -92,6 +97,7 @@ class WorkOrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        WorkOrder::destroy($id);
+        return redirect()->route('workorders.index')->with('message', "Werk bon is succesvol verwijderd");
     }
 }
