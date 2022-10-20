@@ -28,7 +28,7 @@ class ErrorMaintenanceControllor extends Controller
     {
         $meetings = Maintenance::all();
         $companies = Company::all();
-        return view('authenticated.maintenance.errors.create')->with(compact('meetings' , 'companies'));
+        return view('authenticated.maintenance.meetings.create')->with(compact('meetings' , 'companies'));
     }
 
     /**
@@ -57,7 +57,7 @@ class ErrorMaintenanceControllor extends Controller
     public function show($id)
     {
         $meeting = Maintenance::findOrFail($id);
-        return view('authenticated.errors.show')->with(compact('meeting'));
+        return view('authenticated.maintenance.meetings.show')->with(compact('meeting'));
     }
 
     /**
