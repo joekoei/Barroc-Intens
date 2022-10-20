@@ -13,6 +13,7 @@
                     center: 'dayGridMonth timeGridWeek timeGridDay',
                     end: 'prev next'
                 },
+
             });
             <?php
             use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,7 @@
                 title: '<?php echo $meeting->remark ?>',
                 start: '<?php echo $meeting->date_added ?>',
                 end: '<?php echo $meeting->date_added ?>',
+                url: 'meetings/<?php echo $meeting->id ?>',
                 allDay: true
             });
             <?php
