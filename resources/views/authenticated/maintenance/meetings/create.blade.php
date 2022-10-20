@@ -1,5 +1,4 @@
-@extends('layouts.base')
-
+@extends('layouts.auth')
 @section('content')
     <div class="container">
         <form action="{{route('meetings.store')}}" method="POST">
@@ -11,9 +10,18 @@
             <div class="form-group">
                 <label for="first">Bedrijf</label>
                 <select class="form-select" name="comp" id="comp">
-                    <option selected>Choose...</option>
+                    <option selected>Kies medewerker..</option>
                     @foreach($companies as $comp)
                         <option value="{{$comp->id}}">{{$comp->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="medewerker">Medewerker</label>
+                <select name="user_id" id="user_id">
+                    <option selected>Kies medewerker..</option>
+                    @foreach($users as $user)
+                        <option value="{{$user->id}}">{{$user->name}}</option>
                     @endforeach
                 </select>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Maintenance;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ErrorMaintenanceControllor extends Controller
@@ -28,7 +29,8 @@ class ErrorMaintenanceControllor extends Controller
     {
         $meetings = Maintenance::all();
         $companies = Company::all();
-        return view('authenticated.maintenance.meetings.create')->with(compact('meetings' , 'companies'));
+        $users = User::all()->where('role_id','=',2);
+        return view('authenticated.maintenance.meetings.create')->with(compact('meetings' , 'companies','users'));
     }
 
     /**
@@ -43,6 +45,7 @@ class ErrorMaintenanceControllor extends Controller
             "remark"=>$request->remark,
             "company_id"=>$request->comp,
             "date_added"=>$request->date,
+            'user_id'=>$request->user_id
         ]);
 
         return redirect()->route('meetings.index');
