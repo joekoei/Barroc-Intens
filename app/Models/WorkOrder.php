@@ -18,15 +18,17 @@ class WorkOrder extends Model
         "note",
         "when",
         "location",
+        "workorder_id"
 
     ];
+
 
     public function company(){
         return Company::findOrFail($this->company_id);
     }
 
     public function user(){
-        return User::finOrFail($this->user_id);
+        return User::findOrFail($this->user_id);
     }
 
     protected $table = "workorder";
