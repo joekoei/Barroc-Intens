@@ -44,6 +44,7 @@ class WorkOrderController extends Controller
         $data2 = $request->except(['_token','description', 'parts_used','user_id','company_id', 'note', 'when', 'location']);
 
         WorkOrder::create([
+            'workorder_id'=>$this->generateRandomString(),
             'products_worked_on'=>json_encode($data2),
             'parts_used'=>json_encode($data),
             'description'=>$request->description,
@@ -103,5 +104,15 @@ class WorkOrderController extends Controller
     {
         WorkOrder::destroy($id);
         return redirect()->route('workorders.index')->with('message', "Werk bon is succesvol verwijderd");
+    }
+
+    function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return "barroc-" . $randomString;
     }
 }
