@@ -9,11 +9,15 @@ class Maintenance extends Model
 {
     use HasFactory;
     protected $table = 'maintenance_appointments';
-    protected $fillable = ['remark','company_id',"date_added"];
+    protected $fillable = ['remark','company_id',"date_added", "user_id"];
 
 
     public function company(){
         return Company::findOrFail($this->company_id);
+    }
+
+    public function user(){
+        return User::finOrFail($this->user_id);
     }
 
     // $appointment->company()->name

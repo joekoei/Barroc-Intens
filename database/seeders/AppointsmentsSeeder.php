@@ -18,17 +18,20 @@ class AppointsmentsSeeder extends Seeder
         Maintenance::create([
             'company_id' => '1',
             'remark' => 'test',
-            'date_added'=>date_create('now')->format('Y-m-d H:i:s')
+            'date_added'=>date_create('now')->format('Y-m-d H:i:s'),
+            'user_id'=> '1'
         ]);
         Maintenance::create([
             'company_id' => '1',
             'remark' => 'test',
-            'date_added'=>date_create('now')->format('Y-m-d H:i:s')
+            'date_added'=>date_create('now')->format('Y-m-d H:i:s'),
+            'user_id'=> '1'
         ]);
         Maintenance::create([
             'company_id' => '1',
             'remark' => 'test',
-            'date_added'=>date_create('now')->format('Y-m-d H:i:s')
+            'date_added'=>date_create('now')->format('Y-m-d H:i:s'),
+            'user_id'=> '1'
         ]);
     }
 }
