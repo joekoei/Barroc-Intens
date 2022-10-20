@@ -46,7 +46,7 @@
                         <i class='bx bxs-user-account' ></i>
                         Overzicht klanten
                     </a>
-                        <a href="{{route('workorder.index')}}" id="agenda.side" class="db-force">
+                        <a href="{{route('workorders.index')}}" id="agenda.side" class="db-force">
                             <i class='bx bxs-user-account' ></i>
                             Werk bonnen
                         </a>

@@ -26,7 +26,9 @@ class WorkOrderController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all();
+        $workorders = WorkOrder::all();
+        return view('authenticated.maintenance.workorders.create')->with(compact('workorders', "companies"));
     }
 
     /**
@@ -37,10 +39,12 @@ class WorkOrderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token','subject']);
+
+        $data = $request->except(['_token','description','products_worked_on','user_id','company_id', 'note', 'when', 'location']);
+        $data2 = $request->except(['_token','description', 'parts_used','user_id','company_id', 'note', 'when', 'location']);
 
         WorkOrder::create([
-            'products_worked_on'=>json_encode($data),
+            'products_worked_on'=>json_encode($data2),
             'parts_used'=>json_encode($data),
             'description'=>$request->description,
             'user_id'=>$request->user_id,

@@ -50,7 +50,8 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("meetings",ErrorMaintenanceControllor::class);
         Route::get('/plan',[MaintenanceMeetingController::class,"index"])->name('maintenance.plan');
         Route::resource('workorders',WorkOrderController::class);
-        Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorder.index');
+        Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorders.index');
+        Route::post('/workorder',[WorkOrderController::class,"store"])->name('workorders.store');
     });
 
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
