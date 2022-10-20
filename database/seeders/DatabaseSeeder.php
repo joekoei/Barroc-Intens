@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             AppointsmentsSeeder::class,
             ProductSeeder::class,
-            PartsSeeder::class
         ]);
     }
 }
