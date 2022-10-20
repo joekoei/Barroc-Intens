@@ -19,7 +19,7 @@
                                 <td class="text-muted text-center">{{$company->name}}</td>
                                 <td class="text-muted text-center">{{$company->owner()->name}}</td>
                                 <td class="text-muted text-center">{{$company->owner()->email}}</td>
-                                <td class="text-muted text-center"><a href="{{route('klant.show',$company->owner())}}" class="btn btn-info">Aanpassen</a></td>
+                                <td class="text-muted text-center"><a href="{{route('klant.show',$company->owner())}}" class="btn btn-info">Voeg opmerking toe</a></td>
                             </tr>
                         @endforeach
                         </tbody>
