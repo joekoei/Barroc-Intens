@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('maintenance_appointments', function (Blueprint $table) {
-            $table->foreignId("user_id")->references('id')->on('users');
+            $table->integer("user_id");
         });
     }
 
