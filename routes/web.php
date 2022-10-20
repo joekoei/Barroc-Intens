@@ -9,6 +9,7 @@ use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\WorkOrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +47,8 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix("maintenance")->group(function () {
         Route::resource("meetings",ErrorMaintenanceControllor::class);
         Route::get('/plan',[MaintenanceMeetingController::class,"index"])->name('maintenance.plan');
+        Route::resource('workorders',WorkOrderController::class);
+        Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorder.index');
     });
 
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
