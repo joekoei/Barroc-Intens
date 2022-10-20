@@ -8,6 +8,11 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 nextDayThreshold:'23:59',
                 initialView: 'dayGridMonth',
+                headerToolbar: {
+                    start: 'title',
+                    center: 'dayGridMonth timeGridWeek timeGridDay',
+                    end: 'prev next'
+                },
             });
             <?php
             foreach ($meetings as $meeting):
