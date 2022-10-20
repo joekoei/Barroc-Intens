@@ -209,3 +209,7 @@ nav .row {
 .db-link:hover{
     color: #FDD716;
 }
+
+.text-yellow {
+    color: #FDD716 !important;
+}
