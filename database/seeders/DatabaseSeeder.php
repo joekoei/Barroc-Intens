@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             ProductCatogorySeeder::class,
             CompanySeeder::class,
             AppointsmentsSeeder::class,
-            ProductSeeder::class
+            ProductSeeder::class,
+            PartsSeeder::class
         ]);
     }
 }
