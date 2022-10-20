@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="medewerker">Medewerker</label>
-                <select name="user_id" id="user_id">
+                <select name="user_id" id="user_id" class="form-select">
                     <option selected>Kies medewerker..</option>
                     @foreach($users as $user)
                         <option value="{{$user->id}}">{{$user->name}}</option>

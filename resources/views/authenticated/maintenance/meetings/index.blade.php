@@ -10,7 +10,9 @@
                 initialView: 'dayGridMonth',
             });
             <?php
+            use Illuminate\Support\Facades\Auth;
             foreach ($meetings as $meeting):
+                if($meeting->user_id == Auth::user()->id){
             ?>
             calendar.addEvent({
                 title: '<?php echo $meeting->remark ?>',
@@ -18,7 +20,10 @@
                 end: '<?php echo $meeting->date_added ?>',
                 allDay: true
             });
-            <?php endforeach;?>
+            <?php
+                }
+                endforeach;
+            ?>
             setTimeout(() => {
                 calendar.render();
             },10)
