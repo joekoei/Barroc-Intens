@@ -45,8 +45,28 @@ class ErrorMaintenanceControllor extends Controller
             "remark"=>$request->remark,
             "company_id"=>$request->comp,
             "date_added"=>$request->date,
-            'user_id'=>$request->user_id
+            'user_id'=>$request->user_id,
         ]);
+
+        // do your shizzle
+        $isAnual = false;
+        if(issset($request->isAnual)){
+            $isAnual = true;
+        }
+
+        if($isAnual) {
+            for ($x = 0; $x <= 4; $x++) {
+                $date = $request->date;
+                $months = $x*6;
+                $calculatedDate = date('d-m-Y', strtotime("+ " . $months . " months", strtotime($date)));
+                Maintenance::create([
+                    "remark"=>$request->remark,
+                    "company_id"=>$request->company_id,
+                    "date_added"=>$calculatedDate,
+                    "user_id"=>$request->user_id
+                ]);
+            }
+        }
 
         return redirect()->route('meetings.index');
     }

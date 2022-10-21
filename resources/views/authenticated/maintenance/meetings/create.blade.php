@@ -30,6 +30,11 @@
                 <input type="date" class="form-select" id="date" name="date">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div class="form-group">
+                <label for="Controle afspraak?"></label>
+                <input type = 'checkbox' name="isAnnual" id="Isannual">
+            </div>
         </form>
     </div>
 
