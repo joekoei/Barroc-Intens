@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.auth')
 @section('content')
     <h2 class="text-center">Maak een factuur aan voor in het systeem</h2>
     <div class="container">
