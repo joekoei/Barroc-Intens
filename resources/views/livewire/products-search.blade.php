@@ -1,5 +1,5 @@
 <div>
-    <div class="container ">
+    <div class="container mt-3">
         <input wire:model="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </div>
     <div class="container d-flex justify-content-center">
