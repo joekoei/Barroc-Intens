@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="Controle afspraak?"></label>
-                <input type = 'checkbox' name="isAnnual" id="Isannual">
+                <input type = 'checkbox' name="isAnual" id="isAnual">
             </div>
         </form>
     </div>

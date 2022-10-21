@@ -50,7 +50,7 @@ class ErrorMaintenanceControllor extends Controller
 
         // do your shizzle
         $isAnual = false;
-        if(issset($request->isAnual)){
+        if(isset($request->isAnual)){
             $isAnual = true;
         }
 
@@ -58,10 +58,10 @@ class ErrorMaintenanceControllor extends Controller
             for ($x = 0; $x <= 4; $x++) {
                 $date = $request->date;
                 $months = $x*6;
-                $calculatedDate = date('d-m-Y', strtotime("+ " . $months . " months", strtotime($date)));
+                $calculatedDate = date('Y-m-d h:m:s', strtotime("+ " . $months . " months", strtotime($date)));
                 Maintenance::create([
                     "remark"=>$request->remark,
-                    "company_id"=>$request->company_id,
+                    "company_id"=>$request->comp,
                     "date_added"=>$calculatedDate,
                     "user_id"=>$request->user_id
                 ]);
