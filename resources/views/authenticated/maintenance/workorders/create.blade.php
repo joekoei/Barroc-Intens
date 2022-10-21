@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="when">Datum:</label>
-                        <input type="date" class="form-control" placeholder="" id="when" name="when">
+                        <input type="datetime-local" class="form-control" placeholder="" id="when" name="when">
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="user_id" id="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">

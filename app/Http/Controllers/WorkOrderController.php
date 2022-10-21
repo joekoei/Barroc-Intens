@@ -15,6 +15,7 @@ class WorkOrderController extends Controller
      */
     public function index()
     {
+
         $workorders= WorkOrder::all();
         return view('authenticated.maintenance.workorders.index')->with(compact('workorders'));
     }
@@ -28,7 +29,7 @@ class WorkOrderController extends Controller
     {
         $companies = Company::all();
         $workorders = WorkOrder::all();
-        return view('authenticated.maintenance.workorders.create')->with(compact('workorders', "companies"));
+        return view('authenticated.maintenance.workorders.create')->with(compact('workorders','companies'));
     }
 
     /**
@@ -54,7 +55,7 @@ class WorkOrderController extends Controller
             'when'=>$request->when,
             'location'=>$request->location,
         ]);
-        return redirect()->route('workorder');
+        return redirect()->route('workorders.index');
     }
 
     /**
