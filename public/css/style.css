@@ -213,3 +213,19 @@ nav .row {
 .text-yellow {
     color: #FDD716 !important;
 }
+
+.cookiealertcustom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 !important;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: all 500ms ease-out;
+    color: #ecf0f1;
+    background: #FDD716;
+}
