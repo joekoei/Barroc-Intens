@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -27,5 +28,10 @@ class PagesController extends Controller
     public function offers($id){
         $productname = Product::findOrFail($id)->name;
         return view('offers')->with(compact('productname'));
+    }
+
+    public function personalData($id){
+        $user = User::findorfail($id);
+        return view('authenticated.customer.personalData')->with(compact('user'));
     }
 }

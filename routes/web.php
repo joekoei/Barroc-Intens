@@ -37,6 +37,8 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
+Route::get('/personal-data/{id}',[PagesController::class,'personalData'])->name('personalData');
+
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
