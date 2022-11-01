@@ -77,6 +77,10 @@
             @if(Auth::user()->role()->name == "klant")
                 <li class="app-sidebar__heading db-color-yellow">Klant</li>
                 <li>
+                    <a href="{{route('malfunctions.index')}}"  id="klanten.side" class="db-force">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Lease apparaten
+                    </a>
                     <a href=""  id="klanten.side" class="db-force">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn contracten

@@ -7,6 +7,7 @@ use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\MaintenanceMeetingController;
+use App\Http\Controllers\MalfunctionsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\WorkOrderController;
@@ -52,6 +53,10 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource('workorders',WorkOrderController::class);
         Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorders.index');
         Route::post('/workorder',[WorkOrderController::class,"store"])->name('workorders.store');
+    });
+
+    Route::prefix("malfunctions")->group(function () {
+        Route::resource('malfunctions',MalfunctionsController::class);
     });
 
     Route::get("/bkr",[PagesController::class,'bkr'])->name('bkr');
