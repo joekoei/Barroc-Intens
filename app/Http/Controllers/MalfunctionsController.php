@@ -14,7 +14,7 @@ class MalfunctionsController extends Controller
      */
     public function index()
     {
-        $malfunctions = Malfunction::all();;
+        $malfunctions = Malfunction::all();
         return view("authenticated.customer.malfunctions.index")->with(compact('malfunctions'));
     }
 
@@ -25,7 +25,8 @@ class MalfunctionsController extends Controller
      */
     public function create()
     {
-        //
+        $malfunctions = Malfunction::all();
+        return view("authenticated.customer.malfunctions.create")->with(compact('malfunctions'));
     }
 
     /**
@@ -36,7 +37,11 @@ class MalfunctionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Malfunction::create([
+
+        ]);
+
+        return redirect()->route('malfuctions.index');
     }
 
     /**
@@ -47,7 +52,8 @@ class MalfunctionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $malfuntions = Malfunction::findOrFail($id);
+        return view('authenticated.customer.malfunctions.see')->with(compact('malfuntions'));
     }
 
     /**
@@ -58,7 +64,8 @@ class MalfunctionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $malfuntions = Malfunction::findOrFail($id);
+        return view('authenticated.customer.malfunctions.edit')->with(compact('malfuntions'));
     }
 
     /**
@@ -70,7 +77,9 @@ class MalfunctionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $malfunctions = Malfunction::findOrFail($id);
+        $malfunctions->update($request->except('_token','_method'));
+        return redirect()->route('malfunctions.index');
     }
 
     /**
@@ -81,6 +90,7 @@ class MalfunctionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Malfunction::destroy($id);
+        return redirect()->route('malfunctions.index')->with('message', "Storing is succesvol verwijderd");
     }
 }
