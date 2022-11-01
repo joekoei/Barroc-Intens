@@ -18,25 +18,29 @@
                             <th class="text-center">Onderdelen Gebruikt</th>
                             <th class="text-center">Beschrijving</th>
                             <th class="text-center">Aantekeningen</th>
+                            <th class="text-center">Bekijken</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($workorders as $workorder )
-                            <tr>
-                                <td class="text-muted text-center">{{$workorder->workorder_id}}</td>
-                                <td class="text-muted text-center">{{$workorder->when}}</td>
-                                <td class="text-muted text-center">{{$workorder->user()->name}}</td>
-                                <td class="text-muted text-center">{{$workorder->company()->name}}</td>
-                                <td class="text-muted text-center">{{$workorder->location}}</td>
-                                <td class="text-muted text-center">{{$workorder->products_worked_on}}</td>
-                                <td class="text-muted text-center">{{$workorder->parts_used}}</td>
-                                <td class="text-muted text-center">{{$workorder->description}}</td>
-                                <td class="text-muted text-center">{{$workorder->note}}</td>
-                                <td class="text-center">
-                                </td>
-                                <td class="text-center">
-                                </td>
-                            </tr>
+                            @if( Auth::user()->id == $workorder->user_id || Auth::user()->id == 6)
+                                <tr>
+                                    <td class="text-muted text-center">{{$workorder->workorder_id}}</td>
+                                    <td class="text-muted text-center">{{$workorder->when}}</td>
+                                    <td class="text-muted text-center">{{$workorder->user()->name}}</td>
+                                    <td class="text-muted text-center">{{$workorder->company()->name}}</td>
+                                    <td class="text-muted text-center">{{$workorder->location}}</td>
+                                    <td class="text-muted text-center">{{$workorder->products_worked_on}}</td>
+                                    <td class="text-muted text-center">{{$workorder->parts_used}}</td>
+                                    <td class="text-muted text-center">{{$workorder->description}}</td>
+                                    <td class="text-muted text-center">{{$workorder->note}}</td>
+                                    <td class="text-muted text-center"><a href="{{route('workorders.show', $workorder->id)}}" class="btn btn-success text-white">Bekijk</a></td>
+                                    <td class="text-center">
+                                    </td>
+                                    <td class="text-center">
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>

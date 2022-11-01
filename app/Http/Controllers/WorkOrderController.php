@@ -66,7 +66,8 @@ class WorkOrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $workorder = WorkOrder::findOrFail($id);
+        return view('authenticated.maintenance.workorders.show')->with(compact('workorder'));
     }
 
     /**
