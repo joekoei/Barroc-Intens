@@ -9,13 +9,6 @@
             <option value="2">Bonen</option>
         </select>
     </div>
-    <div>
-        <select name="sortby" wire:model="sortby">
-            <option value="" selected>Alles</option>
-            <option value="1">Op Vooraad</option>
-            <option value="2">Niet Op Vooraad</option>
-        </select>
-    </div>
     <div class="container d-flex justify-content-center">
         <div class="row mt-5">
             @foreach($products as $product)
