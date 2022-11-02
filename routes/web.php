@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\LeasecontractsController;
 use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\MalfunctionsController;
 use App\Http\Controllers\PagesController;
@@ -71,6 +72,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
 
     Route::prefix('finance')->group(function () {
         Route::resource("invoices", InvoicesController::class);
+        Route::resource("leasecontracts", LeasecontractsController::class);
     });
 
     Route::get('/logout',[ExtendedAuthController::class,'logout'])->name('uitlog');

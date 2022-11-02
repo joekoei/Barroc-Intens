@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leasecontracts', function (Blueprint $table) {
+        Schema::create('leasecontract', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->references('id')->on('companies');
             $table->enum('pay_method', ['Maandelijks','Jaarlijks']);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leasecontracts');
+        Schema::dropIfExists('leasecontract');
     }
 };
