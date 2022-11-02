@@ -29,9 +29,4 @@ class PagesController extends Controller
         $productname = Product::findOrFail($id)->name;
         return view('offers')->with(compact('productname'));
     }
-
-    public function personalData($id){
-        $user = User::findorfail($id);
-        return view('authenticated.customer.personalData')->with(compact('user'));
-    }
 }
