@@ -3,7 +3,7 @@
 @livewireStyles
 @section('content')
     <body class="db-background-gray">
-            <livewire:products-search />
+            <livewire:products-search/>
     @livewireScripts
     </body>
 @endsection

@@ -2,6 +2,13 @@
     <div class="container mt-3">
         <input wire:model="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </div>
+    <div>
+        <select name="sortby" wire:model="sortby">
+            <option value="" selected>Alles</option>
+            <option value="1">KoffieApperaten</option>
+            <option value="2">Bonen</option>
+        </select>
+    </div>
     <div class="container d-flex justify-content-center">
         <div class="row mt-5">
             @foreach($products as $product)
