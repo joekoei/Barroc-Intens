@@ -47,8 +47,7 @@ class ClientsController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-        dd("Test");
-        $user = User::findorfail($id);
+        $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
