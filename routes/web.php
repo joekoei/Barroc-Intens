@@ -37,11 +37,14 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
-Route::get('/personal-data/{id}',[ClientsController::class,'personalData'])->name('personalData');
-Route::get('/personal-data-edit/{id}',[ClientsController::class,'personalDataEdit'])->name('personalDataEdit');
-Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
+    Route::prefix('clients')->group(function () {
+        Route::get('/personal/{id}',[ClientsController::class,'personalData'])->name('personalData');
+        Route::get('/personal/{id}',[ClientsController::class,'personalDataEdit'])->name('personalDataEdit');
+        Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
+    });
+
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {

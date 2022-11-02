@@ -31,13 +31,13 @@ class ClientsController extends Controller
     }
 
     public function personalData($id){
-        $user = User::findorfail($id);
+        $user = User::findOrFail($id);
         return view('authenticated.customer.personalData')->with(compact('user'));
     }
 
     public function personalDataEdit($id)
     {
-        $user = User::findorfail($id);
+        $user = User::findOrFail($id);
         return view('authenticated.customer.personalDataEdit')->with(compact('user'));
     }
     public function personalDataUpdate(Request $request,$id)
