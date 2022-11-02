@@ -42,7 +42,8 @@ class ProductsController extends Controller
             "description"=>$request->description,
             "image_paths"=>$request->image_paths,
             "price"=>$request->price,
-            "product_catogory_id"=>$request->cat
+            "product_catogory_id"=>$request->cat,
+            "stock"=>$request->stock
         ]);
 
         return redirect()->route('products.index');
@@ -85,6 +86,7 @@ class ProductsController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->product_catogory_id = $request->cat;
+        $product->stock = $request->stock;
         $product->save();
         return redirect()->route('products.index');
     }
