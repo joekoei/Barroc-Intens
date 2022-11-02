@@ -17,7 +17,7 @@ class InvoicesController extends Controller
     public function index()
     {
         $invoices = Invoice::all();
-        return view('authenticated.finance.index')->with(compact('invoices'));
+        return view('authenticated.finance.facturen.index')->with(compact('invoices'));
     }
 
     /**
@@ -28,7 +28,7 @@ class InvoicesController extends Controller
     public function create()
     {
         $companies = Company::all();
-        return view('authenticated.finance.create')->with(compact('companies'));;
+        return view('authenticated.finance.facturen.create')->with(compact('companies'));;
     }
 
     /**
@@ -74,7 +74,7 @@ class InvoicesController extends Controller
     {
         $companies = Company::all();
         $invoice = Invoice::findOrFail($id);
-        return view('authenticated.finance.edit')->with(compact('invoice', 'companies'));
+        return view('authenticated.finance.facturen.edit')->with(compact('invoice', 'companies'));
     }
 
     /**
