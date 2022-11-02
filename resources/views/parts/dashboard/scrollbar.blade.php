@@ -68,7 +68,7 @@
                     <i class='bx bx-money'></i>
                     Facturen
                 </a>
-                <a href=""  id="factuur.side" class="db-force">
+                <a href="{{route('leasecontracts.index')}}"  id="factuur.side" class="db-force">
                     <i class='bx bxs-book-content'></i>
                     Leasecontracten
                 </a>

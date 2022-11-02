@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invoice;
+use App\Models\Leasecontract;
 use Illuminate\Http\Request;
 
 class LeasecontractsController extends Controller
@@ -13,7 +15,9 @@ class LeasecontractsController extends Controller
      */
     public function index()
     {
-        //
+        $invoices = Invoice::all();
+        $lease = leasecontract::all();
+        return view('authenticated.finance.lease.index')->with(compact('invoices', 'lease'));
     }
 
     /**

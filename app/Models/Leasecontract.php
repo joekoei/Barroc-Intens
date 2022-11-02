@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class leasecontract extends Model
 {
     use HasFactory;
-    protected $table = "leasecontracts";
+    protected $table = "leasecontract";
     protected $fillable = ['company_id','pay_method','agreed_rules','prijs'];
 
     public function company(){
