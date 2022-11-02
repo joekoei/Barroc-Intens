@@ -13,6 +13,7 @@
                             <th class="text-center">Prijs</th>
                             <th class="text-center">Categorie</th>
                             <th class="text-center">Laatst geupdate</th>
+                            <th class="text-center">Voorraad</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -23,6 +24,7 @@
                                 <td class="text-muted text-center">{{$product->price}}</td>
                                 <td class="text-muted text-center">{{$product->cat()->name}}</td>
                                 <td class="text-muted text-center">{{$product->updated_at}}</td>
+                                <td class="text-muted text-center">{{$product->stock}}</td>
                                 <td class="text-center">
                                     <a href="{{route('products.edit', $product)}}" class="btn btn-success text-white">Edit</a>
                                 </td>
