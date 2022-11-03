@@ -70,7 +70,10 @@ class LeasecontractsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $companies = Company::all();
+        $lease = leasecontract::findOrFail($id);
+        return view('authenticated.finance.lease.edit')->with(compact('lease', 'companies'));
+
     }
 
     /**
@@ -82,7 +85,9 @@ class LeasecontractsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lease = Leasecontract::findOrFail($id);
+        $lease->update($request->except('_token','_method'));
+        return redirect()->route('leasecontracts.index');
     }
 
     /**
