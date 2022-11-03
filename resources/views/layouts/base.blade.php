@@ -18,7 +18,7 @@
 
 @include('parts.footer')
 <div class="alert text-center cookiealert" role="alert" style="background: #1a202c none !important;">
-    <b>Hou jij van koekjes bij de koffie?</b> &#x1F36A; We gebruiken cookies om jou ervaring op onze website te verbeteren! Meer weten? Kijk dan in de privacyverklaring. <a href="" target="_blank" class="text-yellow">Kijk hier</a>
+    <b>Hou jij van koekjes bij de koffie?</b> &#x1F36A; We gebruiken cookies om jou ervaring op onze website te verbeteren! Meer weten? Kijk dan in de privacyverklaring. <a href="{{asset('files/privacy_statement.pdf')}}" target="_blank" class="text-yellow">Kijk hier</a>
 
     <button type="button" class="btn btn-primary btn-sm acceptcookies">
         Ik ga akkoord
