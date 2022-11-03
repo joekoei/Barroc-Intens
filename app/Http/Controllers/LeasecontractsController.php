@@ -59,7 +59,10 @@ class LeasecontractsController extends Controller
      */
     public function show($id)
     {
-        //
+        $companies = Company::all();
+        $lease = leasecontract::all();
+        $invoice = Invoice::all();
+        return view('authenticated.finance.lease.show')->with(compact('lease', 'companies','invoice'));
     }
 
     /**
