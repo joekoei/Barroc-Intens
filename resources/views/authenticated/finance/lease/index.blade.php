@@ -18,7 +18,7 @@
                         <tbody>
                         @foreach($lease as $leasecontracts)
                             <tr>
-                                <td class="text-muted text-center">{{$leasecontracts->company()->name}}</td>
+                                <td class="text-muted text-center"><a href="{{route('leasecontracts.show', $leasecontracts)}}">{{$leasecontracts->company()->name}}</a></td>
                                 <td class="text-muted text-center">{{$leasecontracts->pay_method}}</td>
                                 <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
                                 <td class="text-muted text-center"><a href="{{route('leasecontracts.edit', $leasecontracts)}}" class="btn btn-info">Aanpassen</a></td>
