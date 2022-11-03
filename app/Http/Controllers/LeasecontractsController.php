@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Invoice;
 use App\Models\Leasecontract;
 use Illuminate\Http\Request;
@@ -27,7 +28,9 @@ class LeasecontractsController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all();
+        $lease = leasecontract::all();
+        return view('authenticated.finance.lease.create')->with(compact('companies','lease'));;
     }
 
     /**
@@ -38,7 +41,14 @@ class LeasecontractsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        leasecontract::create([
+            "company_id"=>$request->comp,
+            "agreed_rules"=>$request->agreed_rules,
+            "date"=>$request->date,
+            "pay_method"=>$request->pay_method
+        ]);
+
+        return redirect()->route('leasecontracts.index');
     }
 
     /**
