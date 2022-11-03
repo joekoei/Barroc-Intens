@@ -79,5 +79,13 @@ class UserSeeder extends Seeder
             'role_id'=>2,
             'notes'=>"{}"
         ]);
+
+        User::create([
+            'name' => 'Hoofd Inkoop',
+            'email' => 'head@inkoop.com',
+            'password' => Hash::make('Inkoop123'),
+            'role_id' => 7,
+            'notes'=>"{}"
+        ]);
     }
 }

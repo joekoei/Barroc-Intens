@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductCatogory;
 use Illuminate\Http\Request;
@@ -100,5 +101,52 @@ class ProductsController extends Controller
     {
         Product::destroy($id);
         return back();
+    }
+
+
+    public function order(Order $order){
+        $order->agree = true;
+        $order->status = "Completed";
+        $order->save();
+
+        $product = $order->product();
+        $product->stock = $product->stock + $order->pieces;
+        $product->save();
+
+        $orders = Order::all()->where('agree','=',0);
+        return view('authenticated.products.order.index')->with(compact('orders'));
+    }
+
+    public function seeOrders(){
+        $orders = Order::all()->where('agree','=',0);
+        return view('authenticated.products.order.index')->with(compact('orders'));
+    }
+
+    public function orderProduct(Product $product){
+        return view('authenticated.products.order.create')->with(compact('product'));
+    }
+
+    public function storeOrder(Request $request){
+        $status = "Complete";
+        $agree = true;
+        if($request->stock > 5000){
+           $status = "Waiting on Head";
+           $agree = false;
+        }
+
+        if($agree){
+            $product = Product::findOrFail($request->product_id);
+            $product->stock = $product->stock + $request->stock;
+            $product->save();
+        }
+
+        Order::create([
+            "product_id"=>$request->product_id,
+            "pieces"=>$request->stock,
+            "status"=>$status,
+            "agree"=>$agree
+        ]);
+
+        return redirect()->route('products.index');
     }
 }

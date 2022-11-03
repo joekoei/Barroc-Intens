@@ -53,6 +53,13 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/clients',[ClientsController::class,'index'])->name('klant.index');
         Route::get('/clients/{user}/note',[ClientsController::class,'client'])->name('klant.show');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
+
+
+        Route::get('/orders',[ProductsController::class,'seeOrders'])->name('products.order.see');
+        Route::get('/orders/{order}/',[ProductsController::class,'order'])->name('products.order.keur');
+
+        Route::get("/products/order/{product}",[ProductsController::class,'orderProduct'])->name('products.order');
+        Route::post('/products/',[ProductsController::class,'storeOrder'])->name('products.order.store');
     });
 
     Route::prefix("maintenance")->group(function () {
