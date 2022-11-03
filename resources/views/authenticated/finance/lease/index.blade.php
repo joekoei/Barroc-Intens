@@ -23,7 +23,7 @@
                                 <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
                                 <td class="text-muted text-center"><a href="{{route('leasecontracts.edit', $leasecontracts)}}" class="btn btn-info">Aanpassen</a></td>
                                 <td class="text-muted text-center"><a href="">
-                                        <form action="" method="post">
+                                        <form action="{{route('leasecontracts.destroy', $leasecontracts)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" value="Verwijderen" class="btn btn-danger">

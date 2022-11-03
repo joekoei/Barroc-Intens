@@ -98,6 +98,8 @@ class LeasecontractsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Leasecontract::destroy($id);
+        return redirect()->route('leasecontracts.index')->with('message', "Leasecontract is succesvol verwijderd");
+
     }
 }
