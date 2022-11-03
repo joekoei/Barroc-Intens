@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('leasecontract', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->references('id')->on('companies');
-            $table->enum('pay_method', ['Maandelijks','Jaarlijks']);
+            $table->string('pay_method');
             $table->text('agreed_rules');
             $table->timestamps();
         });

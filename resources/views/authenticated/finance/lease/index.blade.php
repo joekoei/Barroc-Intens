@@ -16,12 +16,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($invoices as $invoice)
+                        @foreach($lease as $leasecontracts)
                             <tr>
-                                <td class="text-muted text-center">{{$invoice->company()->name}}</td>
-                                <td class="text-muted text-center"></td>
-                                <td class="text-muted text-center">{{$invoice->date}}</td>
-                                <td class="text-muted text-center"><a href="" class="btn btn-info">Aanpassen</a></td>
+                                <td class="text-muted text-center">{{$leasecontracts->company()->name}}</td>
+                                <td class="text-muted text-center">{{$leasecontracts->pay_method}}</td>
+                                <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
+                                <td class="text-muted text-center"><a href="{{route('leasecontracts.edit', $leasecontracts)}}" class="btn btn-info">Aanpassen</a></td>
                                 <td class="text-muted text-center"><a href="">
                                         <form action="" method="post">
                                             @csrf
