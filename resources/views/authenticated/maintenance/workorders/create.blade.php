@@ -5,6 +5,7 @@
     <div class="container">
         <form action="{{route('workorders.store')}}" method="POST">
             @csrf
+            <input type="hidden" name="who" value="{{Auth::user()->name}}">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -33,7 +34,12 @@
                     </div>
                     <div class="form-group">
                         <label for="parts_used">Onderdelen Gebruikt:</label>
-                        <input type="text" class="form-control" placeholder="" id="parts_used" name="parts_used">
+                        <select class="form-select" name="parts_used" id="parts_used">
+                            <option selected>Kies hier je onderdelen..</option>
+                            @foreach($products as $product)
+                                <option value="{{$product->id}}">{{$product->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="description">Beschrijving:</label>

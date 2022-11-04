@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Product;
+use App\Models\Transaction;
 use App\Models\WorkOrder;
 use Illuminate\Http\Request;
 
@@ -29,7 +31,8 @@ class WorkOrderController extends Controller
     {
         $companies = Company::all();
         $workorders = WorkOrder::all();
-        return view('authenticated.maintenance.workorders.create')->with(compact('workorders','companies'));
+        $products = Product::all()->where('product_catogory_id','=',"3");
+        return view('authenticated.maintenance.workorders.create')->with(compact('workorders','companies','products'));
     }
 
     /**
@@ -41,8 +44,13 @@ class WorkOrderController extends Controller
     public function store(Request $request)
     {
 
-        $data = $request->except(['_token','description','products_worked_on','user_id','company_id', 'note', 'when', 'location']);
-        $data2 = $request->except(['_token','description', 'parts_used','user_id','company_id', 'note', 'when', 'location']);
+        $data = $request->except(['_token','description','products_worked_on','user_id','company_id', 'note', 'when', 'location','who']);
+        $data2 = $request->except(['_token','description', 'parts_used','user_id','company_id', 'note', 'when', 'location','who']);
+
+        Transaction::create([
+            "wie"=>$request->who,
+            "product_id"=>$request->parts_used
+        ]);
 
         WorkOrder::create([
             'workorder_id'=>$this->generateRandomString(),
