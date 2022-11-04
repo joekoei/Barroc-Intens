@@ -14,7 +14,8 @@ class Product extends Model
         "description",
         "image_paths",
         "price",
-        "product_catogory_id"
+        "product_catogory_id",
+        "stock"
     ];
 
     public function cat(){

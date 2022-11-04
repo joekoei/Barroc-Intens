@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\LeasecontractsController;
 use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\MalfunctionsController;
 use App\Http\Controllers\PagesController;
@@ -37,11 +38,14 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
-Route::get('/personal-data/{id}',[ClientsController::class,'personalData'])->name('personalData');
-Route::get('/personal-data-edit/{id}',[ClientsController::class,'personalDataEdit'])->name('personalDataEdit');
-Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
+    Route::prefix('clients')->group(function () {
+        Route::get('/personal/{id}',[ClientsController::class,'personalData'])->name('personalData');
+        Route::get('/personal/{id}',[ClientsController::class,'personalDataEdit'])->name('personalDataEdit');
+        Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
+    });
+
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/voorbeeld',[DashboardController::class,'voorbeeld']);
     Route::prefix("sales")->group(function () {
@@ -49,6 +53,13 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/clients',[ClientsController::class,'index'])->name('klant.index');
         Route::get('/clients/{user}/note',[ClientsController::class,'client'])->name('klant.show');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
+
+
+        Route::get('/orders',[ProductsController::class,'seeOrders'])->name('products.order.see');
+        Route::get('/orders/{order}/',[ProductsController::class,'order'])->name('products.order.keur');
+
+        Route::get("/products/order/{product}",[ProductsController::class,'orderProduct'])->name('products.order');
+        Route::post('/products/',[ProductsController::class,'storeOrder'])->name('products.order.store');
     });
 
     Route::prefix("maintenance")->group(function () {
@@ -68,6 +79,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
 
     Route::prefix('finance')->group(function () {
         Route::resource("invoices", InvoicesController::class);
+        Route::resource("leasecontracts", LeasecontractsController::class);
     });
 
     Route::get('/logout',[ExtendedAuthController::class,'logout'])->name('uitlog');

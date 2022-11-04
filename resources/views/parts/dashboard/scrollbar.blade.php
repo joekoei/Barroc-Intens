@@ -52,7 +52,7 @@
                         </a>
                 </li>
             @endif
-            @if(Auth::user()->role()->name == "inkoop")
+            @if(Auth::user()->role()->name == "inkoop" || Auth::user()->role()->name == "head-inkoop")
                 <li class="app-sidebar__heading db-color-yellow">Inkoop</li>
                 <li>
                     <a href="{{route('products.index')}}"  id="klanten.side" class="db-force">
@@ -68,7 +68,7 @@
                     <i class='bx bx-money'></i>
                     Facturen
                 </a>
-                <a href=""  id="factuur.side" class="db-force">
+                <a href="{{route('leasecontracts.index')}}"  id="factuur.side" class="db-force">
                     <i class='bx bxs-book-content'></i>
                     Leasecontracten
                 </a>

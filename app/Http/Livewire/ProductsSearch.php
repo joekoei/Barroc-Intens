@@ -19,9 +19,12 @@ class ProductsSearch extends Component
         if ($this->sortby == "") {
             return view('livewire.products-search',
                 ['products' => Product::search('name', $this->search)->paginate()]);
-        } else{
+        } else if ($this->sortby == "1"){
             return view('livewire.products-search',
-                ['products' => Product::search('name', $this->search)->where('product_catogory_id', $this->sortby)->paginate()]);
+                ['products' => Product::search('name', $this->search)->where('stock' ,'<', 1)->paginate()]);
+        } else if ($this->sortby == "0"){
+            return view('livewire.products-search',
+            ['products' => Product::search('name', $this->search)->where('stock', '>', 0)->paginate()]);
         }
     }
 }

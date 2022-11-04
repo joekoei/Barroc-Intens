@@ -13,6 +13,7 @@
                             <th class="text-center">Prijs</th>
                             <th class="text-center">Categorie</th>
                             <th class="text-center">Laatst geupdate</th>
+                            <th class="text-center">Voorraad</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -23,9 +24,15 @@
                                 <td class="text-muted text-center">{{$product->price}}</td>
                                 <td class="text-muted text-center">{{$product->cat()->name}}</td>
                                 <td class="text-muted text-center">{{$product->updated_at}}</td>
+                                <td class="text-muted text-center">{{$product->stock}}</td>
                                 <td class="text-center">
                                     <a href="{{route('products.edit', $product)}}" class="btn btn-success text-white">Edit</a>
                                 </td>
+                                @if(Auth::user()->role()->name == "inkoop")
+                                    <td class="text-center">
+                                        <a href="{{route('products.order', $product)}}" class="btn btn-success text-white">Bestel</a>
+                                    </td>
+                                @endif
                                 <td class="text-center">
                                     <form id="delete.form" action="{{route('products.destroy', $product->id)}}" method="post" class="d-hidden">
                                         @csrf
@@ -38,11 +45,15 @@
                         </tbody>
                     </table>
                 </div>
-                @if(Auth::user()->role()->name == "inkoop")
                     <div class="d-block text-center card-footer">
-                        <a href="{{route('products.create')}}" class="db-auth btn">Product aanmaken</a>
+                        @if(Auth::user()->role()->name == "inkoop")
+                            <a href="{{route('products.create')}}" class="db-auth btn">Product aanmaken</a>
+                        @endif
+                        @if(Auth::user()->role()->name == "head-inkoop")
+                            <a href="{{route('products.order.see')}}" class="db-auth btn">Orders goedkeuren</a>
+                            <a href="{{route('products.create')}}" class="db-auth btn">Product aanmaken</a>
+                        @endif
                     </div>
-                @endif
             </div>
         </div>
     </div>

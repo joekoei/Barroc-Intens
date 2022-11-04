@@ -37,5 +37,9 @@ class RoleSeeder extends Seeder
         Role::create([
             "name"=>"head-maintenance"
         ]);
+
+        Role::create([
+            "name"=>"head-inkoop"
+        ]);
     }
 }
