@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
@@ -30,14 +31,17 @@ class ClientsController extends Controller
         return back();
     }
 
-    public function personalData($id){
-        $user = User::findOrFail($id);
+    public function personalData(){
+        // overbodige stukjes
+        //$user = User::findOrFail($id);
+        $user = Auth::user();
         return view('authenticated.customer.personalData')->with(compact('user'));
     }
 
-    public function personalDataEdit($id)
+    public function personalDataEdit()
     {
-        $user = User::findOrFail($id);
+//        $user = User::findOrFail($id);
+        $user = Auth::user();
         return view('authenticated.customer.personalDataEdit')->with(compact('user'));
     }
     public function personalDataUpdate(Request $request,$id)
@@ -46,7 +50,7 @@ class ClientsController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
         ]);
-        $user = User::findOrFail($id);
+        $user = Auth::user();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save($user->except('_token','_method'));
