@@ -229,3 +229,9 @@ nav .row {
     color: #ecf0f1;
     background: #FDD716;
 }
+
+/* PRIVACY LINK MIJN GEGEVENS PAGINA */
+.privacy-link-mail{
+    text-decoration: none;
+    color: gray;
+}
