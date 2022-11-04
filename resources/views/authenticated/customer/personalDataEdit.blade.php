@@ -16,12 +16,6 @@
                         <input type="text" class="form-control" placeholder="Achternaam" id="email" name="email" value="{{$user->email}}">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="text" class="form-control" placeholder="password" id="password" name="password" value="{{$user->password}}">
-                    </div>
-                </div>
             </div>
             <button type="submit" class="btn-wide btn btn-success">Sla de gegevens op</button>
         </form>
