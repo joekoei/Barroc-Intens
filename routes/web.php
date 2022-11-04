@@ -41,8 +41,8 @@ Route::post('/contact',[ContactController::class,'store'])->name('contact.store'
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix('clients')->group(function () {
-        Route::get('/personal/{id}',[ClientsController::class,'personalData'])->name('personalData');
-        Route::get('/personal/{id}',[ClientsController::class,'personalDataEdit'])->name('personalDataEdit');
+        Route::get('/personal/',[ClientsController::class,'personalData'])->name('personal.data');
+        Route::get('/personal/',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
         Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
     });
 
@@ -66,8 +66,8 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("meetings",ErrorMaintenanceControllor::class);
         Route::get('/plan',[MaintenanceMeetingController::class,"index"])->name('maintenance.plan');
         Route::resource('workorders',WorkOrderController::class);
-        Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorders.index');
-        Route::post('/workorder',[WorkOrderController::class,"store"])->name('workorders.store');
+//        Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorders.index');
+//        Route::post('/workorder',[WorkOrderController::class,"store"])->name('workorders.store');
     });
 
     Route::prefix("malfunctions")->group(function () {
