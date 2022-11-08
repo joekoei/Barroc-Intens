@@ -105,4 +105,5 @@ class LeasecontractsController extends Controller
         return redirect()->route('leasecontracts.index')->with('message', "Leasecontract is succesvol verwijderd");
 
     }
+
 }

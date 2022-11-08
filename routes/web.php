@@ -7,6 +7,7 @@ use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\LeasecontractsController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\MalfunctionsController;
 use App\Http\Controllers\PagesController;
@@ -38,6 +39,7 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
+Route::get('/mail-send', [MailController::class, 'mailSend']);
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix('clients')->group(function () {
