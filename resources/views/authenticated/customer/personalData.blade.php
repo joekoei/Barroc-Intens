@@ -23,7 +23,7 @@
         </div>
 
         <div class="d-flex">
-            <a class="btn-wide btn btn-success" href="{{route('personalDataEdit', Auth::user()->id)}}">Edit gegevens</a>
+            <a class="btn-wide btn btn-success" href="{{route('personal.data.edit')}}">Edit gegevens</a>
         </div>
         <div class="d-flex pt-3 ">
             <p>Als u uw account wilt verwijderen stuur een mailtje naar <a class="privacy-link-mail" href="mailto:someone@yoursite.com">privacy@barroc.it</a> </p>
