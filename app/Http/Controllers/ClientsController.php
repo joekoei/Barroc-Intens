@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 
 class ClientsController extends Controller
@@ -43,9 +44,12 @@ class ClientsController extends Controller
             "role_id"=>5,
             "notes"=>"{}"
         ]);
-        $user->save();
 
         // do emailing stuff and generating token for password-setup routes;
+        $user->token = Str::random(32);
+        $user->save();
+
+
     }
 
 
