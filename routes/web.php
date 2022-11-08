@@ -44,7 +44,7 @@ Route::get('/mail-send', [MailController::class, 'mailSend']);
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix('clients')->group(function () {
         Route::get('/personal',[ClientsController::class,'personalData'])->name('personal.data');
-        Route::get('/personal',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
+        Route::get('/personal/{id}',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
         Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
     });
 

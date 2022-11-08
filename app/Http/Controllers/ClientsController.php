@@ -52,14 +52,13 @@ class ClientsController extends Controller
 
     }
 
-
     public function personalData(){
-        return view('authenticated.customer.personalData');
+        $user = Auth::user();
+        return view('authenticated.customer.personalData')->with(compact('user'));
     }
 
     public function personalDataEdit()
     {
-//        $user = User::findOrFail($id);
         $user = Auth::user();
         return view('authenticated.customer.personalDataEdit')->with(compact('user'));
     }
@@ -72,8 +71,8 @@ class ClientsController extends Controller
         $user = Auth::user();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->save($user->except('_token','_method'));
+        $user->save();
 
-        return view('authenticated.customer.personalData')->with(compact('user'));
+        return redirect(route('personal.data'))->with(compact('user'));
     }
 }
