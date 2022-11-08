@@ -41,8 +41,8 @@ Route::post('/contact',[ContactController::class,'store'])->name('contact.store'
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix('clients')->group(function () {
-        Route::get('/personal/',[ClientsController::class,'personalData'])->name('personal.data');
-        Route::get('/personal/',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
+        Route::get('/personal',[ClientsController::class,'personalData'])->name('personal.data');
+        Route::get('/personal',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
         Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
     });
 
@@ -52,6 +52,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("products",ProductsController::class);
         Route::get('/clients',[ClientsController::class,'index'])->name('klant.index');
         Route::get('/clients/{user}/note',[ClientsController::class,'client'])->name('klant.show');
+        Route::get('/clients/create',[ClientsController::class,'create'])->name('klant.create');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
 
 
@@ -66,8 +67,6 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::resource("meetings",ErrorMaintenanceControllor::class);
         Route::get('/plan',[MaintenanceMeetingController::class,"index"])->name('maintenance.plan');
         Route::resource('workorders',WorkOrderController::class);
-//        Route::get('/workorder',[WorkOrderController::class,"index"])->name('workorders.index');
-//        Route::post('/workorder',[WorkOrderController::class,"store"])->name('workorders.store');
     });
 
     Route::prefix("malfunctions")->group(function () {

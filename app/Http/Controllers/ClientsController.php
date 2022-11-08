@@ -13,11 +13,11 @@ class ClientsController extends Controller
 {
     public function index(){
         $companies = Company::all();
-        return view('authenticated.sales.clients')->with(compact('companies'));
+        return view('authenticated.sales.clients.index')->with(compact('companies'));
     }
 
     public function client(User $user){
-        return view('authenticated.sales.client')->with(compact('user'));
+        return view('authenticated.sales.clients.show')->with(compact('user'));
     }
 
     public function addNote(Request $request){
@@ -31,11 +31,26 @@ class ClientsController extends Controller
         return back();
     }
 
+    public function create(){
+        return view('authenticated.sales.clients.create');
+    }
+
+    public function store(Request $request){
+        $user = User::create([
+            'name'=>$request->name,
+            "email"=>$request->email,
+            "password"=>Hash::make("tobesetupped"),
+            "role_id"=>5,
+            "notes"=>"{}"
+        ]);
+        $user->save();
+
+        // do emailing stuff and generating token for password-setup routes;
+    }
+
+
     public function personalData(){
-        // overbodige stukjes
-        //$user = User::findOrFail($id);
-        $user = Auth::user();
-        return view('authenticated.customer.personalData')->with(compact('user'));
+        return view('authenticated.customer.personalData');
     }
 
     public function personalDataEdit()
