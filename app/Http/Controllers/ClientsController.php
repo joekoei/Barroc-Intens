@@ -30,9 +30,8 @@ class ClientsController extends Controller
         return back();
     }
 
-    public function personalData($id){
-        $user = User::findOrFail($id);
-        return view('authenticated.customer.personalData')->with(compact('user'));
+    public function personalData(){
+        return view('authenticated.customer.personalData');
     }
 
     public function personalDataEdit($id)
@@ -46,10 +45,11 @@ class ClientsController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
         ]);
+
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->save($user->except('_token','_method'));
+        $user->save();
 
         return view('authenticated.customer.personalData')->with(compact('user'));
     }

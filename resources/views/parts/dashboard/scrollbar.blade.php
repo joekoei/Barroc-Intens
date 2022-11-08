@@ -93,7 +93,7 @@
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn storingen
                     </a>
-                    <a href="{{route('personalData', Auth::user()->role()->id)}}"  id="klanten.side" class="db-force">
+                    <a href="{{route('personalData', Auth::user())}}"  id="klanten.side" class="db-force">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn gegevens
                     </a>
