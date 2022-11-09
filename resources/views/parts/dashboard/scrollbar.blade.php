@@ -81,11 +81,11 @@
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Lease apparaten
                     </a>
-                    <a href=""  id="klanten.side" class="db-force">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Mijn contracten
+                    <a href="{{route('personal.lease.contract')}}"  id="factuur.side" class="db-force">
+                        <i class='bx bxs-book-content'></i>
+                        Mijn leasecontracten
                     </a>
-                    <a href=""  id="klanten.side" class="db-force">
+                    <a href="{{route('personal.invoices')}}"  id="klanten.side" class="db-force">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Mijn facturen
                     </a>

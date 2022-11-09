@@ -46,6 +46,8 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/personal',[ClientsController::class,'personalData'])->name('personal.data');
         Route::get('/personal/{id}',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
         Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
+        Route::get('/personal-lease-contract',[ClientsController::class,'personalLeaseContract'])->name('personal.lease.contract');
+        Route::get('/personal-invoice',[ClientsController::class,'personalInvoice'])->name('personal.invoices');
     });
 
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
