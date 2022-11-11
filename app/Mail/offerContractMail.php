@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Http\Controllers\LeasecontractsController;
+use App\Models\ContactForm;
 use App\Models\leasecontract;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -22,37 +23,30 @@ class offerContractMail extends Mailable
      */
 
     /**
-     * @var \App\Models\Leasecontract
+     * @var \App\Models\ContactForm
      */
 
-    public $lease;
+    public $contactForm;
 
     /**
      * Create a new message instance.
      *
-     * @param  \App\Models\Leasecontract $lease
+     * @param  \App\Models\ContactForm $contactForm
      * @return void
      */
 
     public function __construct()
     {
-        ;
+        $this->contactForm = ContactForm::where('id' == '1');
     }
 
     /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
+     * @return $this
      */
-    public function content()
-    {
-        return new Content(
-            view: 'mail',
-        );
-    }
 
     public function build()
     {
-        return $this->markdown('Email.offerContractMail');
+        $contactForm = ContactForm::all()->where('id','=',1)->first();
+        return $this->subject('Offerte Barroc Intens')->markdown('Email.offerContractMail', compact('contactForm'));
     }
 }

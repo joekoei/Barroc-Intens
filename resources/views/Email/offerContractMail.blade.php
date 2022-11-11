@@ -1,10 +1,13 @@
 <x-mail::message>
 # Goededag,
 
-Hierbij de Offerte
+Hierbij de Offerte <br>
 
-Naam:
+    Type Contract: Maandelijks
+    Bedrijf: Devbyte
+    Producten: Barroc Intens Deluxe,
 
-Thanks,<br>
-{{ config('app.name') }}
+Met Vriendelijke groeten,<br>
+   Afdeling Sales, <br>
+    {{str_replace("_", " ", env("app_name"))}}
 </x-mail::message>
