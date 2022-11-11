@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Invoice;
+use App\Models\leasecontract;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -74,5 +76,16 @@ class ClientsController extends Controller
         $user->save();
 
         return redirect(route('personal.data'))->with(compact('user'));
+    }
+
+    public function personalLeaseContract(){
+        $lease = leasecontract::all();
+        $company = Company::all()->where('contact_id','=',Auth::user()->id)->first();
+        return view('authenticated.customer.personalLeaseContract')->with(compact('lease', 'company'));
+    }
+    public function personalInvoice(){
+        $invoices = Invoice::all();
+        $company = Company::all()->where('contact_id','=',Auth::user()->id)->first();
+        return view('authenticated.customer.personalInvoices')->with(compact('invoices', 'company'));
     }
 }
