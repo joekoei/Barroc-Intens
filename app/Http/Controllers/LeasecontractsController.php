@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Invoice;
 use App\Models\Leasecontract;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class LeasecontractsController extends Controller
@@ -30,7 +31,8 @@ class LeasecontractsController extends Controller
     {
         $companies = Company::all();
         $lease = leasecontract::all();
-        return view('authenticated.finance.lease.create')->with(compact('companies','lease'));;
+        $products = Product::all();
+        return view('authenticated.finance.lease.create')->with(compact('companies','lease','products'));;
     }
 
     /**
@@ -45,7 +47,22 @@ class LeasecontractsController extends Controller
             "company_id"=>$request->comp,
             "agreed_rules"=>$request->agreed_rules,
             "date"=>$request->date,
-            "pay_method"=>$request->pay_method
+            "pay_method"=>$request->pay_method,
+            "prijs"=>$request->prijs,
+            "product"=>$request->product,
+            "status"=>$request->status,
+            "firstname"=>$request->firstname,
+            "lastname"=>$request->lastname
+        ]);
+
+        Invoice::create([
+            "company_id"=>$request->comp,
+            "paid_at"=>$request->date,
+            "date"=>$request->date,
+            "naam_klant"=>$request->firstname,
+            "achternaam_klant"=>$request->lastname,
+            "gemaakte_afspraken"=>$request->agreed_rules,
+            "prijs"=>$request->prijs
         ]);
 
         return redirect()->route('leasecontracts.index');
@@ -75,7 +92,8 @@ class LeasecontractsController extends Controller
     {
         $companies = Company::all();
         $lease = leasecontract::findOrFail($id);
-        return view('authenticated.finance.lease.edit')->with(compact('lease', 'companies'));
+        $products = Product::all();
+        return view('authenticated.finance.lease.edit')->with(compact('lease', 'companies','products'));
 
     }
 

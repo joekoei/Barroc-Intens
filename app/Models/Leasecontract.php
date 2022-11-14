@@ -9,7 +9,7 @@ class leasecontract extends Model
 {
     use HasFactory;
     protected $table = "leasecontract";
-    protected $fillable = ['company_id','pay_method','agreed_rules','prijs'];
+    protected $fillable = ['company_id','pay_method','agreed_rules','prijs','product','firstname','lastname'];
 
     public function company(){
         return Company::findOrFail($this->company_id);
