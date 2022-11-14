@@ -7,6 +7,7 @@ use App\Http\Controllers\ErrorMaintenanceControllor;
 use App\Http\Controllers\ExtendedAuthController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\LeasecontractsController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\MalfunctionsController;
 use App\Http\Controllers\PagesController;
@@ -38,12 +39,15 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
+Route::get('/mail-send', [MailController::class, 'mailSend']);
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix('clients')->group(function () {
         Route::get('/personal',[ClientsController::class,'personalData'])->name('personal.data');
-        Route::get('/personal',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
+        Route::get('/personal/{id}',[ClientsController::class,'personalDataEdit'])->name('personal.data.edit');
         Route::put('/personal-data-update/{id}',[ClientsController::class,'personalDataUpdate'])->name('personalDataUpdate');
+        Route::get('/personal-lease-contract',[ClientsController::class,'personalLeaseContract'])->name('personal.lease.contract');
+        Route::get('/personal-invoice',[ClientsController::class,'personalInvoice'])->name('personal.invoices');
     });
 
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
@@ -55,6 +59,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/clients/create',[ClientsController::class,'create'])->name('klant.create');
         Route::post('/clients/store',[ClientsController::class,'store'])->name('klant.store');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
+        Route::get('/mail', [MailController::class,'mailSend'])->name('klant.email');
 
 
         Route::get('/orders',[ProductsController::class,'seeOrders'])->name('products.order.see');

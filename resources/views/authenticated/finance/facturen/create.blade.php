@@ -45,12 +45,12 @@
                         <input type="date" class="form-control" placeholder="" id="date" name="date">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="last">Betaald op</label>
-                        <input type="date" class="form-control" placeholder="" id="paid_at" name="paid_at">
-                    </div>
-                </div>
+{{--                <div class="col-md-6">--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="last">Betaald op</label>--}}
+{{--                        <input type="date" class="form-control" placeholder="" id="paid_at" name="paid_at">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
             <button type="submit" class="btn-wide btn btn-success">Sla het factuur op</button>
         </form>
