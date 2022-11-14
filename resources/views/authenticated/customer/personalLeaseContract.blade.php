@@ -11,6 +11,7 @@
                             <th class="text-center">Bedrijfsnaam</th>
                             <th class="text-center">Betaald methode</th>
                             <th class="text-center">Aangemaakt op</th>
+                            <th class="text-center">Gemaakte afspraken</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -20,6 +21,7 @@
                                         <td class="text-muted text-center"><a href="{{route('leasecontracts.show', $leasecontracts)}}">{{$leasecontracts->company()->name}}</a></td>
                                         <td class="text-muted text-center">{{$leasecontracts->pay_method}}</td>
                                         <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
+                                        <td class="text-muted text-center">{{$leasecontracts->agreed_rules}}</td>
                                     </tr>
                                 @endif
                         @endforeach
