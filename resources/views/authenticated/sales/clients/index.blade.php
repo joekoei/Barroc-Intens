@@ -3,7 +3,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="main-card mb-3 card">
-                <div class="card-header">Onze klanten</div>
+                <div class="card-header">Onze klanten
+                    <a href="{{route('klant.create')}}" class="btn btn-info" style="margin-left: 75%">Maak een klant aan.</a>
+                </div>
                 <div class="table-responsive">
                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                         <thead>

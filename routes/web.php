@@ -53,6 +53,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/clients',[ClientsController::class,'index'])->name('klant.index');
         Route::get('/clients/{user}/note',[ClientsController::class,'client'])->name('klant.show');
         Route::get('/clients/create',[ClientsController::class,'create'])->name('klant.create');
+        Route::post('/clients/store',[ClientsController::class,'store'])->name('klant.store');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
 
 
