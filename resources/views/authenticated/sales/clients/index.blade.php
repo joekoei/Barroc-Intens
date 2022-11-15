@@ -16,16 +16,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $user)
-                            @if($user->role_id == 5)
-                                <tr>
-                                    <td class="text-muted text-center">{{$user->name}}</td>
-                                    <td class="text-muted text-center">{{$user->name}}</td>
-                                    <td class="text-muted text-center">{{$user->email}}</td>
-                                    <td class="text-muted text-center"><a href="{{route('klant.show', $user->id)}}" class="btn btn-info">Voeg opmerking toe</a></td>
-                                    <td class="text-muted text-center"><a href="{{route('klant.email')}}" class="btn btn-info">Stuur offerte</a></td>
-                                </tr>
-                            @endif
+                        @foreach($companies as $company)
+                            <tr>
+                                <td class="text-muted text-center">{{$company->name}}</td>
+                                <td class="text-muted text-center">{{$company->owner()->name}}</td>
+                                <td class="text-muted text-center">{{$company->owner()->email}}</td>
+                                <td class="text-muted text-center"><a href="{{route('klant.show',$company->owner())}}" class="btn btn-info">Voeg opmerking toe</a></td>
+                                <td class="text-muted text-center"><a href="{{route('klant.email')}}" class="btn btn-info">Stuur offerte</a></td>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>
