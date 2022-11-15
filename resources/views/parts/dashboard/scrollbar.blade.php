@@ -11,10 +11,10 @@
             @if(Auth::user()->role()->name == "sales")
                 <li class="app-sidebar__heading db-color-yellow">Sales</li>
                 <li>
-                    <a href="" id="home.side" class="db-force">
-                        <i class='bx bx-comment-detail'></i>
-                        Offertes
-                    </a>
+{{--                    <a href="" id="home.side" class="db-force">--}}
+{{--                        <i class='bx bx-comment-detail'></i>--}}
+{{--                        Offertes--}}
+{{--                    </a>--}}
                     <a href="{{route('contact')}}" id="home.side" class="db-force">
                         <i class='bx bxs-contact'></i>
                         Contact formulieren

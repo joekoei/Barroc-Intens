@@ -37,16 +37,17 @@ class offerContractMail extends Mailable
 
     public function __construct()
     {
-        $this->contactForm = ContactForm::where('id' == '1');
     }
 
     /**
      * @return $this
      */
 
+
     public function build()
     {
-        $contactForm = ContactForm::all()->where('id','=',1)->first();
+        $id = '1';
+        $contactForm = Leasecontract::where('id','=',$id)->first();
         return $this->subject('Offerte Barroc Intens')->markdown('Email.offerContractMail', compact('contactForm'));
     }
 }
