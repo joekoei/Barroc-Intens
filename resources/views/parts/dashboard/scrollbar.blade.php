@@ -78,7 +78,7 @@
                 <li class="app-sidebar__heading db-color-yellow">Klant</li>
                 <li>
                     <a href="{{route('malfunctions.index')}}"  id="klanten.side" class="db-force">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class="bx bx-coffee-togo"></i>
                         Lease apparaten
                     </a>
                     <a href="{{route('personal.lease.contract')}}"  id="factuur.side" class="db-force">
@@ -86,15 +86,15 @@
                         Mijn leasecontracten
                     </a>
                     <a href="{{route('personal.invoices')}}"  id="klanten.side" class="db-force">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class="bx bx-money"></i>
                         Mijn facturen
                     </a>
                     <a href=""  id="klanten.side" class="db-force">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class='bx bxs-user-account'></i>
                         Mijn storingen
                     </a>
                     <a href="{{route('personal.data')}}"  id="klanten.side" class="db-force">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class="bx bx-comment-detail"></i>
                         Mijn gegevens
                     </a>
                 </li>
