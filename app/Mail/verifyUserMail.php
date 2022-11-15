@@ -39,7 +39,7 @@ class verifyUserMail extends Mailable
 
     public function __construct($id)
     {
-        $this->contactForm = User::where('id','=',$id);
+        $this->contactForm = User::where('id','=',$id)->first();
     }
 
     /**
