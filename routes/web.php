@@ -68,7 +68,7 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/clients/create',[ClientsController::class,'create'])->name('klant.create');
         Route::post('/clients/store',[ClientsController::class,'store'])->name('klant.store');
         Route::post('/clients',[ClientsController::class,'addNote'])->name('klant.note');
-        Route::get('/mail', [MailController::class,'mailSend'])->name('klant.email');
+        Route::get('/mail/{id}', [MailController::class,'mailSend'])->name('klant.email');
 
 
         Route::get('/orders',[ProductsController::class,'seeOrders'])->name('products.order.see');

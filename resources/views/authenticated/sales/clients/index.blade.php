@@ -22,7 +22,7 @@
                                 <td class="text-muted text-center">{{$company->owner()->name}}</td>
                                 <td class="text-muted text-center">{{$company->owner()->email}}</td>
                                 <td class="text-muted text-center"><a href="{{route('klant.show',$company->owner())}}" class="btn btn-info">Voeg opmerking toe</a></td>
-                                <td class="text-muted text-center"><a href="{{route('klant.email')}}" class="btn btn-info">Stuur offerte</a></td>
+                                <td class="text-muted text-center"><a href="{{route('klant.email', $company)}}" class="btn btn-info">Stuur offerte</a></td>
                             </tr>
                         @endforeach
                         </tbody>
