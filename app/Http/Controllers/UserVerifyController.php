@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserVerifyController extends Controller
@@ -25,6 +26,7 @@ class UserVerifyController extends Controller
             $user = User::findOrFail($request->user_id);
             $user->update(['password'=>$password,'token'=>"-"]);
             $user->save();
+            Auth::loginUsingId($user->id);
             return redirect()->route('dashboard');
         } else {
             return redirect()->back();
