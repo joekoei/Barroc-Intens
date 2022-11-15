@@ -25,7 +25,7 @@ class LeasecontractTableSeeder extends Seeder
             ['prijs'=>'600.00'],
             ['prijs'=>'12000.00'],
             ['pay_method'=>'Maandelijks'],
-            ['pay_method'=>'Jaarlijks']
+            ['pay_method'=>'Jaarlijks'],
         ))->create();
 
     }

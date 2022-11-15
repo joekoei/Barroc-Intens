@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             AppointsmentsSeeder::class,
             ProductSeeder::class,
+            InvoiceTableSeeder::class,
+            WorkOrderTableSeeder::class,
+            LeasecontractTableSeeder::class
         ]);
     }
 }
