@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\offerContractMail;
+use App\Mail\verifyUserMail;
 use App\Models\Company;
 use App\Models\Invoice;
 use App\Models\leasecontract;
@@ -9,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 
@@ -40,7 +43,7 @@ class ClientsController extends Controller
     }
 
     public function store(Request $request){
-        User::create([
+        $user = User::create([
             'name'=>$request->name,
             "email"=>$request->email,
             "password"=>Hash::make("tobesetupped"),
@@ -48,7 +51,10 @@ class ClientsController extends Controller
             "notes"=>"{}",
             "token"=>Str::random(32)
         ]);
-        // do emailing stuff and generating token for password-setup routes;
+        $user->save();
+        $email = 'devbyte@dev.nl';
+
+        Mail::to($email)->send(new verifyUserMail($user->id));
         return redirect()->route('klant.index');
 
 
