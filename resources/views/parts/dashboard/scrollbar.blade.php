@@ -77,7 +77,7 @@
             @if(Auth::user()->role()->name == "klant")
                 <li class="app-sidebar__heading db-color-yellow">Klant</li>
                 <li>
-                    <a href="{{route('malfunctions.index')}}"  id="klanten.side" class="db-force">
+                    <a href="{{route('personal.products')}}"  id="klanten.side" class="db-force">
                         <i class="bx bx-coffee-togo"></i>
                         Lease apparaten
                     </a>

@@ -54,6 +54,9 @@ Route::prefix("dashboard")->middleware(['auth'])->group(function (){
         Route::get('/personal-lease-contract',[ClientsController::class,'personalLeaseContract'])->name('personal.lease.contract');
         Route::get('/personal-invoice',[ClientsController::class,'personalInvoice'])->name('personal.invoices');
         Route::get('/personal-bestellingen',[ClientsController::class,'bestellingen'])->name('personal.bestellingen');
+        Route::get('/personal-lease-products',[ClientsController::class,'personalLeaceProducts'])->name('personal.products');
+
+        Route::get('/personal/{company}/{id}',[ClientsController::class,'storeStoring'])->name('personal.storing');
     });
 
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');

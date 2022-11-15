@@ -7,6 +7,7 @@ use App\Mail\verifyUserMail;
 use App\Models\Company;
 use App\Models\Invoice;
 use App\Models\leasecontract;
+use App\Models\Maintenance;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -97,5 +98,23 @@ class ClientsController extends Controller
 
     public function bestellingen(){
         return view('authenticated.customer.bestellingen');
+    }
+
+    public function personalLeaceProducts(){
+        $company = Company::where('contact_id','=',Auth::user()->id)->first();
+        $products = leasecontract::all()->where('company_id','=',$company->id);
+        return view('authenticated.customer.personalProducts')->with(compact('products'));
+    }
+
+    public function storeStoring(Company $company, $id){
+        $lease = leasecontract::where("id",'=',$id)->first();
+        Maintenance::create([
+            "remark"=>$lease->product,
+            'company_id'=>$company->id,
+            'date_added'=>date_create('now')->format('Y-m-d H:i:s'),
+            "user_id"=>"2"
+        ]);
+
+        return redirect()->back()->with(['status'=>"Verzonden!"]);
     }
 }

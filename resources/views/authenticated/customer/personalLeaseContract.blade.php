@@ -18,7 +18,7 @@
                         @foreach($lease as $leasecontracts)
                             @if($leasecontracts->company_id === $company->id)
                                     <tr>
-                                        <td class="text-muted text-center"><a href="{{route('leasecontracts.show', $leasecontracts)}}">{{$leasecontracts->company()->name}}</a></td>
+                                        <td class="text-muted text-center"><a href="">{{$leasecontracts->company()->name}}</a></td>
                                         <td class="text-muted text-center">{{$leasecontracts->pay_method}}</td>
                                         <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
                                         <td class="text-muted text-center">{{$leasecontracts->agreed_rules}}</td>
