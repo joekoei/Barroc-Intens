@@ -3,9 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Faker\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -21,7 +23,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'active'
     ];
 
     /**
@@ -34,6 +37,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+
     /**
      * The attributes that should be cast.
      *
@@ -43,7 +48,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     public function role(){
         return Role::findOrFail($this->role_id);
     }
@@ -51,4 +55,46 @@ class User extends Authenticatable
     public function company(){
         return Company::all()->where('contact_id','=',$this->id);
     }
+
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'role_id' => 5,
+            'notes'=>"{}",
+            'active'=>1
+        ];
+    }
+
+
 }
+//
+//class UserFactory extends Factory
+//{
+//    /**
+//     * The name of the factory's corresponding model.
+//     *
+//     * @var string
+//     */
+//    protected $model = User::class;
+//
+//    /**
+//     * Define the model's default state.
+//     *
+//     * @return array
+//     */
+//    public function definition()
+//    {
+//        return [
+//            'name' => $this->faker->name(),
+//            'email' => $this->faker->unique()->safeEmail(),
+//            'email_verified_at' => now(),
+//            'password' => Hash::make('password'),
+//            'role_id' => 5,
+//            'notes'=>"{}",
+//        ];
+//    }
+//}

@@ -87,5 +87,10 @@ class UserSeeder extends Seeder
             'role_id' => 7,
             'notes'=>"{}"
         ]);
+
+        User::factory()->count(150)->create();
+        User::factory()->count(40)->create([
+            "active"=>0
+        ]);
     }
 }
