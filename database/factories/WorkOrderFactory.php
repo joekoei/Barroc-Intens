@@ -25,13 +25,15 @@ class WorkOrderFactory extends Factory
 
     public function definition()
     {
+        $min = 1;
+        $max = 191;
         return [
             'workorder_id' =>$this->generateRandomString(),
             'products_worked_on'=>json_encode('{"products_worked_on": "Barroc intens light"}'),
             'parts_used'=>json_encode('{"parts_used": "15"}'),
             'description'=>'Lorem ipsum dolor sit',
             'user_id'=>'2',
-            'company_id'=>'1',
+            'company_id'=>random_int( $min, $max),
             'note'=>'Lorem ipsum dolor sit amet.',
             'when'=>date(now()),
             'location'=>'curio',

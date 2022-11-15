@@ -23,8 +23,10 @@ class LeasecontractFactory extends Factory
      */
     public function definition()
     {
+        $min = 1;
+        $max = 191;
         return [
-            "company_id"=>'1',
+            "company_id"=>random_int( $min, $max),
             "agreed_rules"=>'Lorem ipsum dolor sit amet.',
             "pay_method"=>'Maandelijks',
             "prijs"=>'900',
