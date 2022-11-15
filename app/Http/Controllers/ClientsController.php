@@ -15,8 +15,9 @@ use Illuminate\Validation\Rules;
 class ClientsController extends Controller
 {
     public function index(){
-        $companies = Company::all();
-        return view('authenticated.sales.clients.index')->with(compact('companies'));
+        $users = User::all();
+        return view('authenticated.sales.clients.index')->with(compact('users'));
+
     }
 
     public function client(User $user){
