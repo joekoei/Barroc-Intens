@@ -12,6 +12,7 @@ use App\Http\Controllers\MaintenanceMeetingController;
 use App\Http\Controllers\MalfunctionsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UserVerifyController;
 use App\Http\Controllers\WorkOrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,10 @@ Route::get("/contact", [PagesController::class,'contact'])->name('contact');
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
 
 Route::get('/mail-send', [MailController::class, 'mailSend']);
+
+Route::get('/user/verify/{token}', [UserVerifyController::class,'verify'])->name('user.verify');
+
+Route::post('/user/verify/',[UserVerifyController::class,'store'])->name('verify.store');
 
 Route::prefix("dashboard")->middleware(['auth'])->group(function (){
     Route::prefix('clients')->group(function () {
