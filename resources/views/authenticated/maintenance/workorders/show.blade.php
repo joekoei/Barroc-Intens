@@ -9,8 +9,8 @@
                 <p>Gebruiker : {{$workorder->user()->name}}</p>
                 <p>Bij bedrijf : {{$workorder->company()->name}}</p>
                 <p>Op locatie : {{$workorder->location}}</p>
-                <p>Producten waaraan gewerkt is : {{$workorder->products_worked_on}}</p>
-                <p>Onderdelen gebruikt : {{$workorder->parts_used}}</p>
+                <p>Producten waaraan gewerkt is : {{json_decode($workorder->products_worked_on)}}</p>
+                <p>Onderdelen gebruikt : {{json_decode($workorder->parts_used)}}</p>
                 <p>Beschrijving uitgevoerd onderhoud : {{$workorder->description}}</p>
                 <p>Notitie werknemer : {{$workorder->note}}</p>
             </div>
