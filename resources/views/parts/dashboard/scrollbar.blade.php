@@ -97,6 +97,10 @@
                         <i class="bx bx-comment-detail"></i>
                         Mijn gegevens
                     </a>
+                    <a href="{{route('personal.bestellingen')}}"  id="klanten.side" class="db-force">
+                        <i class="bx bx-cart"></i>
+                        Mijn bestellingen
+                    </a>
                 </li>
             @endif
         </ul>

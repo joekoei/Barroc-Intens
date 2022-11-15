@@ -88,4 +88,8 @@ class ClientsController extends Controller
         $company = Company::all()->where('contact_id','=',Auth::user()->id)->first();
         return view('authenticated.customer.personalInvoices')->with(compact('invoices', 'company'));
     }
+
+    public function bestellingen(){
+        return view('authenticated.customer.bestellingen');
+    }
 }
