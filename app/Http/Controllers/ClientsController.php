@@ -100,6 +100,13 @@ class ClientsController extends Controller
         return view('authenticated.customer.bestellingen');
     }
 
+    public function showStoringen(){
+        $company = Company::where('contact_id','=',Auth::user()->id)->first();
+        $maintenances = Maintenance::all()->where('company_id','=',$company->id);
+
+        return view('authenticated.customer.personalStoringen')->with(compact('maintenances'));
+    }
+
     public function personalLeaceProducts(){
         $company = Company::where('contact_id','=',Auth::user()->id)->first();
         $products = leasecontract::all()->where('company_id','=',$company->id);

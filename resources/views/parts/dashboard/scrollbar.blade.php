@@ -89,7 +89,7 @@
                         <i class="bx bx-money"></i>
                         Mijn facturen
                     </a>
-                    <a href=""  id="klanten.side" class="db-force">
+                    <a href="{{route('personal.storingen')}}"  id="klanten.side" class="db-force">
                         <i class='bx bxs-user-account'></i>
                         Mijn storingen
                     </a>
