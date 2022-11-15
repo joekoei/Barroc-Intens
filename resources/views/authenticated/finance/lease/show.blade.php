@@ -11,16 +11,16 @@
                             <th class="text-center">Bedrijfsnaam</th>
                             <th class="text-center">Betaald methode</th>
                             <th class="text-center">Aangemaakt op</th>
-                            <th class="text-center">Bewerken</th>
+                            <th class="text-center">Gemaakte afspraken</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($lease as $leasecontracts)
                             <tr>
-                                <td class="text-muted text-center">{{$leasecontracts->company()->name}}</td>
+                                @if($leasecontracts->company()->id = "1" )<td class="text-muted text-center">{{$leasecontracts->company()->name}}</td>@endif
                                 <td class="text-muted text-center">{{$leasecontracts->pay_method}}</td>
                                 <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
-                                <td class="text-muted text-center"><a href="{{route('leasecontracts.edit', $leasecontracts)}}" class="btn btn-info">Aanpassen</a></td>
+                                <td class="text-muted text-center">{{$leasecontracts->agreed_rules}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -42,7 +42,7 @@
                             <th class="text-center">Betaald op</th>
                             <th class="text-center">Aangemaakt op</th>
                             <th class="text-center">Prijs</th>
-                            <th class="text-center">Bewerken</th>
+                            <th class="text-center">Gemaakte afspraken</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,7 +53,7 @@
                                 <td class="text-muted text-center">{{$invoices->paid_at}}</td>
                                 <td class="text-muted text-center">{{$invoices->date}}</td>
                                 <td class="text-muted text-center">{{$invoices->prijs}}</td>
-                                <td class="text-muted text-center"><a href="{{route('invoices.edit', $invoices)}}" class="btn btn-info">Aanpassen</a></td>
+                                <td class="text-muted text-center">{{$invoices->agreed_rules}}</td>
                             </tr>
                         @endforeach
                         </tbody>

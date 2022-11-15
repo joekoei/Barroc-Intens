@@ -9,8 +9,11 @@
                         <thead>
                         <tr>
                             <th class="text-center">Bedrijfsnaam</th>
+                            <th class="text-center">Product</th>
                             <th class="text-center">Betaald methode</th>
                             <th class="text-center">Aangemaakt op</th>
+                            <th class="text-center">Prijs</th>
+                            <th class="text-center">Status</th>
                             <th class="text-center">Bewerken</th>
                             <th class="text-center">Verwijderen</th>
                         </tr>
@@ -19,8 +22,11 @@
                         @foreach($lease as $leasecontracts)
                             <tr>
                                 <td class="text-muted text-center"><a href="{{route('leasecontracts.show', $leasecontracts)}}">{{$leasecontracts->company()->name}}</a></td>
+                                <td class="text-muted text-center">{{$leasecontracts->product}}</td>
                                 <td class="text-muted text-center">{{$leasecontracts->pay_method}}</td>
                                 <td class="text-muted text-center">{{$leasecontracts->created_at}}</td>
+                                <td class="text-muted text-center">{{$leasecontracts->prijs}}</td>
+                                <td class="text-muted text-center">{{$leasecontracts->status}}</td>
                                 <td class="text-muted text-center"><a href="{{route('leasecontracts.edit', $leasecontracts)}}" class="btn btn-info">Aanpassen</a></td>
                                 <td class="text-muted text-center"><a href="">
                                         <form action="{{route('leasecontracts.destroy', $leasecontracts)}}" method="post">

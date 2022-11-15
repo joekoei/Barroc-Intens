@@ -39,17 +39,16 @@ class ClientsController extends Controller
     }
 
     public function store(Request $request){
-        $user = User::create([
+        User::create([
             'name'=>$request->name,
             "email"=>$request->email,
             "password"=>Hash::make("tobesetupped"),
             "role_id"=>5,
-            "notes"=>"{}"
+            "notes"=>"{}",
+            "token"=>Str::random(32)
         ]);
-
         // do emailing stuff and generating token for password-setup routes;
-        $user->token = Str::random(32);
-        $user->save();
+        return redirect()->route('klant.index');
 
 
     }
