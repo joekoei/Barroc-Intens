@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,16 @@ class UserVerifyController extends Controller
             $user = User::findOrFail($request->user_id);
             $user->update(['password'=>$password,'token'=>"-"]);
             $user->save();
+            Company::create([
+                "name"=>"fill-in",
+                "phone"=>"fill-in",
+                "street"=>"fill-in",
+                "house_number"=>"11",
+                "city"=>"fill-in",
+                "country_code"=>"NL",
+                "bkr_checked"=>date_create('now')->format('Y-m-d H:i:s'),
+                "contact_id"=>$user->id
+            ]);
             Auth::loginUsingId($user->id);
             return redirect()->route('dashboard');
         } else {
